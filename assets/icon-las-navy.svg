@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  
+  <circle cx="512" cy="512" r="512" fill="#15233c"></circle>
+  <circle cx="512" cy="512" r="424.96" fill="none" stroke="#8d97a6" stroke-opacity="0.55" stroke-width="5.6"></circle>
+  <text x="512" y="651.4" text-anchor="middle" font-family="&#39;Cormorant Garamond&#39;, serif" font-weight="500" font-size="410" fill="#fafbfc">L<tspan font-size="439" baseline-shift="41" fill="#e26b44">@</tspan>S</text>
+</svg>
