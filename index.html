@@ -256,138 +256,38 @@ margin-top: 2rem; padding-top: 2rem;
 border-top: 1px solid rgba(185,194,205,.16);
 }
 
-/* ── THE RECORD FRAMEWORK (replaces How It Works) ── */
+/* ── THE RECORD FRAMEWORK ── */
 #how { border-bottom: 1px solid var(--hair); }
 h2.how {
 font-family: var(--serif);
 font-size: clamp(2.25rem, 4vw, 4.5rem);
 font-weight: 500; line-height: 1.05; letter-spacing: -.02em;
-color: var(--navy); margin-bottom: 1.5rem;
+color: var(--navy); margin-bottom: 3.5rem;
 }
 h2.how em { font-style: italic; font-weight: 400; color: var(--persimmon); }
-.rec-sub {
-font-family: var(--news); font-weight: 300; font-style: italic;
-font-size: 1.3rem; line-height: 1.55; color: var(--slate);
-max-width: 62ch; margin-bottom: 3.25rem;
-}
-.rec-sub b { font-style: normal; font-weight: 400; color: var(--navy); }
 
-/* letter strip */
-.rec-strip {
-display: flex; max-width: 680px; margin: 0 0 1.5rem;
-border-top: 1px solid var(--hair);
+.rec-list { border-top: 1px solid var(--hair); max-width: 880px; }
+.rec-row {
+display: grid; grid-template-columns: 72px 1fr; gap: 2rem;
+align-items: center; padding: 1.9rem 0;
+border-bottom: 1px solid var(--hair);
 }
-.rec-strip-item {
-flex: 1; padding: 1.1rem .5rem 1rem; text-align: center; cursor: pointer;
-border-top: 2px solid transparent; transition: all .2s;
-}
-.rec-strip-item:hover { border-top-color: rgba(210,85,47,.45); }
-.rec-strip-item.active { border-top-color: var(--persimmon); }
-.rec-big {
-font-family: var(--serif); font-size: 2.4rem; font-weight: 600;
-color: var(--silver); display: block; line-height: 1; transition: color .2s;
-}
-.rec-strip-item.active .rec-big { color: var(--persimmon); }
-.rec-sm {
-font-family: var(--sans); font-size: .55rem; font-weight: 600;
-letter-spacing: .16em; text-transform: uppercase; color: var(--slate);
-display: block; margin-top: 6px; transition: color .2s;
-}
-.rec-strip-item.active .rec-sm { color: var(--navy); }
-
-/* cards */
-.rec-cards { max-width: 1000px; }
-.rec-card {
-display: grid; grid-template-columns: 96px 1fr; gap: 0 3rem;
-padding: 3.5rem 0; border-bottom: 1px solid var(--hair); align-items: start;
-}
-.rec-card:last-child { border-bottom: none; padding-bottom: 0; }
-.rec-card-left {
-display: flex; flex-direction: column; align-items: center; gap: .85rem;
-position: sticky; top: 7rem;
-}
-.rec-circle {
-width: 76px; height: 76px; border-radius: 50%; background: var(--navy);
+.rec-letter {
+width: 64px; height: 64px; border-radius: 50%;
+background: var(--navy); color: var(--cream-pure);
 display: flex; align-items: center; justify-content: center;
-font-family: var(--serif); font-size: 2.6rem; font-weight: 600;
-color: var(--cream-pure); transition: background .25s, transform .25s;
+font-family: var(--serif); font-size: 2.1rem; font-weight: 600;
+transition: background .25s, transform .25s;
 }
-.rec-card:hover .rec-circle { background: var(--persimmon); transform: scale(1.05); }
-.rec-num {
-font-family: var(--sans); font-size: .6rem; font-weight: 600;
-letter-spacing: .2em; text-transform: uppercase; color: var(--silver);
+.rec-row:hover .rec-letter { background: var(--persimmon); transform: scale(1.06); }
+.rec-word {
+font-family: var(--serif); font-size: clamp(1.5rem, 2.4vw, 2rem);
+font-weight: 500; color: var(--navy); line-height: 1.15;
+letter-spacing: -.01em; margin-bottom: .3rem;
 }
-.rec-cdivider { width: 1px; height: 30px; background: var(--hair); }
-.rec-kw {
-font-family: var(--sans); font-size: .68rem; font-weight: 600;
-letter-spacing: .28em; text-transform: uppercase; color: var(--persimmon);
-display: block; margin-bottom: .8rem;
-}
-.rec-title {
-font-family: var(--serif); font-size: clamp(1.6rem, 2.5vw, 2rem);
-font-weight: 500; color: var(--navy); line-height: 1.2; margin-bottom: 1.1rem;
-}
-.rec-italic {
-font-family: var(--news); font-size: 1.1rem; font-weight: 400; font-style: italic;
-color: var(--navy-soft); margin-bottom: 1.1rem; line-height: 1.65;
-}
-.rec-card-right p {
-font-family: var(--news); font-weight: 300; font-size: 1rem;
-color: var(--slate); line-height: 1.8; margin-bottom: 1.1rem;
-}
-.rec-moves {
-list-style: none; margin-top: 1.75rem; display: flex; flex-direction: column;
-gap: .65rem; padding-top: 1.5rem; border-top: 1px solid var(--hair);
-}
-.rec-moves li {
-display: flex; gap: .9rem; font-family: var(--news); font-weight: 300;
-font-size: .95rem; color: var(--slate); line-height: 1.6;
-}
-.rec-moves li::before {
-content: ''; display: block; width: 5px; height: 5px; border-radius: 50%;
-background: var(--persimmon); margin-top: .6rem; flex-shrink: 0;
-}
-.rec-tag {
-display: inline-block; margin-top: 1.4rem;
-font-family: var(--sans); font-size: .62rem; font-weight: 600;
-letter-spacing: .18em; text-transform: uppercase; color: var(--navy);
-border: 1px solid var(--hair); padding: .35rem .9rem; background: var(--cream-pure);
-}
-
-/* navy quick-reference band */
-.rec-reference {
-background: var(--navy);
-border-bottom: 1px solid rgba(185,194,205,.16);
-}
-.rec-ref-ey {
-font-family: var(--sans); font-size: .7rem; font-weight: 600;
-letter-spacing: .28em; text-transform: uppercase; color: var(--persimmon-bright);
-display: flex; align-items: center; gap: .9rem; margin-bottom: 2.25rem;
-}
-.rec-ref-ey::after { content: ''; flex: 1; height: 1px; background: rgba(185,194,205,.18); }
-.rec-ref-h {
-font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
-color: var(--cream-pure); line-height: 1.15; margin-bottom: 3rem; max-width: 600px;
-}
-.rec-ref-h em { font-style: italic; color: var(--persimmon-bright); }
-.rec-grid {
-display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px;
-background: rgba(185,194,205,.12); border: 1px solid rgba(185,194,205,.12);
-}
-.rec-cell { background: var(--navy-soft); padding: 1.75rem 1.25rem; transition: background .2s; }
-.rec-cell:hover { background: rgba(210,85,47,.14); }
-.rec-ltr {
-font-family: var(--serif); font-size: 2.2rem; font-weight: 600;
-color: var(--persimmon-bright); line-height: 1; margin-bottom: .4rem;
-}
-.rec-wrd {
-font-family: var(--sans); font-size: .6rem; font-weight: 600;
-letter-spacing: .18em; text-transform: uppercase; color: var(--silver-bright);
-display: block; margin-bottom: .65rem;
-}
-.rec-def {
-font-family: var(--news); font-weight: 300; font-size: .85rem;
-color: var(--silver); line-height: 1.55;
+.rec-desc {
+font-family: var(--news); font-weight: 300; font-style: italic;
+font-size: 1.1rem; color: var(--slate); line-height: 1.5;
 }
 
 /* ── SERVICES ── */
@@ -589,12 +489,8 @@ grid-template-columns: 1fr; gap: 3rem;
 }
 .shift-left, .record-left, .what-left, .about-sticky { position: static; }
 .plans-grid { grid-template-columns: 1fr; }
-.rec-card { grid-template-columns: 1fr; gap: 1.25rem; padding: 2.75rem 0; }
-.rec-card-left { flex-direction: row; position: static; gap: 1rem; align-items: center; }
-.rec-cdivider { display: none; }
-.rec-circle { width: 58px; height: 58px; font-size: 2rem; }
-.rec-grid { grid-template-columns: repeat(3, 1fr); }
-.rec-sm { display: none; }
+.rec-row { grid-template-columns: 52px 1fr; gap: 1.25rem; padding: 1.5rem 0; }
+.rec-letter { width: 48px; height: 48px; font-size: 1.6rem; }
 footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
 .footer-links { justify-content: center; }
 }
@@ -667,170 +563,57 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 <section id="how">
 <div class="container">
 <span class="section-label">The RECORD Framework</span>
-<h2 class="how">Six moves. One system.<br><em>The record AI reaches for first.</em></h2>
-<p class="rec-sub">The brands AI recommends first aren't the ones that published most. They're the ones that built the most <b>credible, consistent, structured record.</b></p>
+<h2 class="how">Six moves.<br><em>One record.</em></h2>
+<div class="rec-list">
 
-<!-- letter strip -->
-<div class="rec-strip" id="recStrip">
-<div class="rec-strip-item"><span class="rec-big">R</span><span class="rec-sm">Releases</span></div>
-<div class="rec-strip-item"><span class="rec-big">E</span><span class="rec-sm">Earned</span></div>
-<div class="rec-strip-item"><span class="rec-big">C</span><span class="rec-sm">Consistency</span></div>
-<div class="rec-strip-item"><span class="rec-big">O</span><span class="rec-sm">Original</span></div>
-<div class="rec-strip-item"><span class="rec-big">R</span><span class="rec-sm">Reach</span></div>
-<div class="rec-strip-item"><span class="rec-big">D</span><span class="rec-sm">Documented</span></div>
-</div>
-
-<!-- cards -->
-<div class="rec-cards" id="recFramework">
-
-<div class="rec-card">
-<div class="rec-card-left">
-<div class="rec-circle">R</div>
-<div class="rec-cdivider"></div>
-<span class="rec-num">01 / 06</span>
-</div>
-<div class="rec-card-right">
-<span class="rec-kw">Releases</span>
-<h3 class="rec-title">Structured news creates structured memory.</h3>
-<p class="rec-italic">Press releases and announcements aren't legacy PR. They're structured data drops — verifiable events AI indexes as proof of momentum and expertise over time.</p>
-<p>When AI is asked who leads your category, it draws on what it can verify. Releases filed with wire services, indexed by news aggregators, and cited by journalists create a paper trail AI can trace. An organization that never generates verifiable news events is, to AI, an organization with no history worth citing.</p>
-<p>The goal isn't spray-and-pray distribution. It's strategic, well-timed release of genuinely newsworthy moments tied to your positioning — so the record of your momentum compounds alongside your reputation.</p>
-<ul class="rec-moves">
-<li>Tie every release to a thesis, not just an event — give AI something quotable and attributable</li>
-<li>Use wire distribution that reaches aggregators AI training draws from</li>
-<li>Create news where it doesn't exist: original research launches, milestone reports, named frameworks</li>
-<li>Write headlines as citable statements, not announcement language</li>
-</ul>
-<span class="rec-tag">RECORD Move #1</span>
+<div class="rec-row">
+<div class="rec-letter">R</div>
+<div>
+<div class="rec-word">Releases</div>
+<p class="rec-desc">The blueprint from which authority compounds.</p>
 </div>
 </div>
 
-<div class="rec-card">
-<div class="rec-card-left">
-<div class="rec-circle">E</div>
-<div class="rec-cdivider"></div>
-<span class="rec-num">02 / 06</span>
-</div>
-<div class="rec-card-right">
-<span class="rec-kw">Earned Media</span>
-<h3 class="rec-title">Coverage is infrastructure. Not a metric.</h3>
-<p class="rec-italic">Earned media — bylines, profiles, features, expert quotes — is the substrate the Good Record is built on. Not coverage as a count. Coverage as compounding proof that others trust you enough to amplify you.</p>
-<p>Traditional PR chases placements and reports them as wins. LASilver treats every earned placement as infrastructure — a citation that strengthens the next one. A quote in a credible outlet today becomes the credential that earns a profile next quarter. A profile earns a keynote. A keynote earns more bylines. That's how the record compounds.</p>
-<p>AI systems are trained on earned media at scale. They learn who gets quoted and who gets passed over. The organization that earns consistent, credible media presence in its category is the one AI learns to reach for first.</p>
-<ul class="rec-moves">
-<li>Treat every placement as a building block, not an end point — ask what the next placement becomes</li>
-<li>Prioritize outlets your buyers and AI systems both read — the overlap is your highest-value territory</li>
-<li>Earn quotes in others' stories before pursuing your own features — credibility is borrowed upward</li>
-<li>Repurpose every placement into structured owned content that extends its reach and shelf life</li>
-</ul>
-<span class="rec-tag">RECORD Move #2</span>
+<div class="rec-row">
+<div class="rec-letter">E</div>
+<div>
+<div class="rec-word">Expertise</div>
+<p class="rec-desc">Original thinking worth citing.</p>
 </div>
 </div>
 
-<div class="rec-card">
-<div class="rec-card-left">
-<div class="rec-circle">C</div>
-<div class="rec-cdivider"></div>
-<span class="rec-num">03 / 06</span>
-</div>
-<div class="rec-card-right">
-<span class="rec-kw">Consistency</span>
-<h3 class="rec-title">The record AI trusts is the one that never went quiet.</h3>
-<p class="rec-italic">AI learns from patterns. A consistent presence across channels, topics, and time signals sustained authority — not a one-hit wonder.</p>
-<p>Most organizations publish in bursts — a campaign, a launch, a news cycle — then go silent. That silence is a signal too. AI learns from volume and recency alike. A sparse record creates gaps where competitors can establish their narrative as the default before you return.</p>
-<p>Consistency is not about volume. It's about maintaining an unbroken thread of credible, on-topic thinking that AI and buyers can follow over time. The organization that shows up reliably on the same narrow topic, in the same trusted channels, builds the kind of pattern AI interprets as domain authority.</p>
-<ul class="rec-moves">
-<li>Establish a publishing cadence and protect it — regularity beats intensity every time</li>
-<li>Keep your core topics tightly scoped so AI associates your name with a clear domain</li>
-<li>Show up in the same trusted channels repeatedly, not a different one each quarter</li>
-<li>Make your thinking dateable — timestamps and version history matter to AI systems</li>
-</ul>
-<span class="rec-tag">RECORD Move #3</span>
+<div class="rec-row">
+<div class="rec-letter">C</div>
+<div>
+<div class="rec-word">Coverage</div>
+<p class="rec-desc">Third-party validation.</p>
 </div>
 </div>
 
-<div class="rec-card">
-<div class="rec-card-left">
-<div class="rec-circle">O</div>
-<div class="rec-cdivider"></div>
-<span class="rec-num">04 / 06</span>
-</div>
-<div class="rec-card-right">
-<span class="rec-kw">Original Thinking</span>
-<h3 class="rec-title">The future belongs to those who become the source.</h3>
-<p class="rec-italic">AI recommends the people and organizations others have already recommended. Original research, named frameworks, and proprietary data are the assets that make you worth recommending — and worth citing.</p>
-<p>Content can be produced by anyone. Original thinking — the kind that produces a new framework, a named idea, a dataset no one else holds — can only come from the people who have actually lived in a category long enough to see what others miss. That's your advantage. The question is whether you've made it visible.</p>
-<p>Named ideas are the most durable assets in the Good Record. A framework someone else can cite by name. A study that gets referenced. A term you coined that the industry adopts. These are the assets that keep compounding long after publication.</p>
-<ul class="rec-moves">
-<li>Develop at least one named framework or proprietary model — named ideas are easier for AI to attribute</li>
-<li>Produce original research, even at small scale — a survey of 50 peers becomes a citable data point</li>
-<li>Take definitive positions — AI cites people who have opinions, not people who hedge</li>
-<li>Translate your best spoken ideas into written form — if it lives only in a podcast, it is largely invisible to AI</li>
-</ul>
-<span class="rec-tag">RECORD Move #4</span>
+<div class="rec-row">
+<div class="rec-letter">O</div>
+<div>
+<div class="rec-word">Owned</div>
+<p class="rec-desc">The sources you control.</p>
 </div>
 </div>
 
-<div class="rec-card">
-<div class="rec-card-left">
-<div class="rec-circle">R</div>
-<div class="rec-cdivider"></div>
-<span class="rec-num">05 / 06</span>
-</div>
-<div class="rec-card-right">
-<span class="rec-kw">Reach</span>
-<h3 class="rec-title">One placement in the right outlet outweighs a hundred in the wrong ones.</h3>
-<p class="rec-italic">Not all media carries equal weight in AI's training data. The outlets AI treats as authoritative in your category — the linchpin publications — are where your record most needs to appear.</p>
-<p>AI systems give disproportionate weight to sources that appear consistently in high-quality training data: major industry publications, national outlets, academic venues, and the canonical publications within your specific category. A single placement in a linchpin outlet can do more for your AI visibility than dozens in lower-signal venues.</p>
-<p>Strategic reach isn't about chasing every publication. It's about identifying which two or three outlets AI treats as definitive in your space — and building a sustained, recurring presence there. Depth over breadth. Every time.</p>
-<ul class="rec-moves">
-<li>Map which publications AI cites when asked about your category — those are your reach targets</li>
-<li>Pursue depth over breadth: recurring presence in fewer high-signal outlets beats scattered placement</li>
-<li>Treat major placements as anchors you link from all other record-building activity</li>
-<li>Build editor relationships at linchpin outlets — sustained access compounds the way everything else does</li>
-</ul>
-<span class="rec-tag">RECORD Move #5</span>
+<div class="rec-row">
+<div class="rec-letter">R</div>
+<div>
+<div class="rec-word">Reach</div>
+<p class="rec-desc">Consistent distribution.</p>
 </div>
 </div>
 
-<div class="rec-card">
-<div class="rec-card-left">
-<div class="rec-circle">D</div>
-<div class="rec-cdivider"></div>
-<span class="rec-num">06 / 06</span>
-</div>
-<div class="rec-card-right">
-<span class="rec-kw">Documented Backend</span>
-<h3 class="rec-title">If AI can't parse it, AI can't cite it.</h3>
-<p class="rec-italic">The technical infrastructure behind your web presence determines whether AI can accurately read, understand, and attribute your expertise — or has to guess. Structure is the foundation everything else is built on.</p>
-<p>Schema markup, semantic HTML, structured metadata, and a coherent site architecture aren't SEO tactics. They're signals AI relies on to identify who you are, what you know, and why you're credible. An organization with a strong public record buried in poorly structured web pages is invisible to AI in a way that is entirely fixable.</p>
-<p>The documented backend also includes your Wikipedia presence, Wikidata entries, knowledge panel claims, and cross-platform profile consistency — the elements that allow AI to triangulate your identity with confidence and cite you without ambiguity.</p>
-<ul class="rec-moves">
-<li>Implement Person and Organization schema markup across all owned web properties</li>
-<li>Build and maintain a Wikipedia or Wikidata entry that documents your role and record</li>
-<li>Ensure your name, title, and bio are identical across all public profiles — AI cross-references these</li>
-<li>Maintain a dedicated credentials and publications page on your own domain that AI can discover and parse</li>
-</ul>
-<span class="rec-tag">RECORD Move #6</span>
+<div class="rec-row">
+<div class="rec-letter">D</div>
+<div>
+<div class="rec-word">Documentation</div>
+<p class="rec-desc">Structured signals AI can understand.</p>
 </div>
 </div>
 
-</div>
-</div>
-</section>
-
-<!-- RECORD QUICK REFERENCE -->
-<section class="rec-reference">
-<div class="container">
-<p class="rec-ref-ey">The RECORD Framework &nbsp;·&nbsp; Quick Reference</p>
-<h2 class="rec-ref-h">Six moves.<br><em>One record.</em></h2>
-<div class="rec-grid">
-<div class="rec-cell"><div class="rec-ltr">R</div><span class="rec-wrd">Releases</span><p class="rec-def">Structured news events that create a verifiable, dateable record of momentum.</p></div>
-<div class="rec-cell"><div class="rec-ltr">E</div><span class="rec-wrd">Earned</span><p class="rec-def">Coverage as infrastructure — every placement builds the next one.</p></div>
-<div class="rec-cell"><div class="rec-ltr">C</div><span class="rec-wrd">Consistency</span><p class="rec-def">An unbroken thread of credible presence AI and buyers can follow over time.</p></div>
-<div class="rec-cell"><div class="rec-ltr">O</div><span class="rec-wrd">Original</span><p class="rec-def">Named frameworks, research, and ideas that make you the source worth citing.</p></div>
-<div class="rec-cell"><div class="rec-ltr">R</div><span class="rec-wrd">Reach</span><p class="rec-def">Sustained placement in the linchpin outlets AI treats as authoritative.</p></div>
-<div class="rec-cell"><div class="rec-ltr">D</div><span class="rec-wrd">Documented</span><p class="rec-def">Schema, metadata, and profile consistency so AI can parse and cite you accurately.</p></div>
 </div>
 </div>
 </section>
@@ -949,29 +732,6 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
 nav.classList.toggle('scrolled', window.scrollY > 40);
 });
-
-// RECORD framework: letter strip click-to-scroll + active highlight
-(function () {
-const items = document.querySelectorAll('.rec-strip-item');
-const cards = document.querySelectorAll('.rec-card');
-if (!items.length || !cards.length) return;
-const navH = nav.offsetHeight;
-items.forEach((el, i) => {
-el.addEventListener('click', () => {
-const top = cards[i].getBoundingClientRect().top + window.scrollY - navH - 24;
-window.scrollTo({ top, behavior: 'smooth' });
-});
-});
-const obs = new IntersectionObserver(entries => {
-entries.forEach(e => {
-if (e.isIntersecting) {
-const i = [...cards].indexOf(e.target);
-items.forEach((el, j) => el.classList.toggle('active', i === j));
-}
-});
-}, { rootMargin: '-30% 0px -55% 0px' });
-cards.forEach(c => obs.observe(c));
-})();
 </script>
 </body>
 </html>
