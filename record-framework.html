@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The RECORD Framework — LASilver Communications</title>
+  <meta name="description" content="Six layers. Six behaviors. The system for building authority that AI recognizes and recommends." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:             #15233c;
+      --navy-soft:        #243650;
+      --persimmon:        #d2552f;
+      --persimmon-bright: #e26b44;
+      --slate:            #5d6b80;
+      --silver:           #8d97a6;
+      --silver-bright:    #b9c2cd;
+      --cream:            #f3f4f6;
+      --cream-pure:       #fafbfc;
+      --hair:             #dadee4;
+      --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --corm: "Cormorant Garamond", Garamond, serif;
+      --news: "Newsreader", Georgia, "Times New Roman", serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--cream-pure);
+      color: var(--navy);
+      font-family: var(--news);
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--cream-pure);
+      border-bottom: 1px solid var(--hair);
+      padding: 0 56px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: var(--corm); font-size: 1.2rem; font-weight: 500;
+      color: var(--navy); text-decoration: none; letter-spacing: 0.01em;
+    }
+    .nav-logo span { color: var(--persimmon); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--slate); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--persimmon); text-decoration: none;
+      border: 1px solid var(--persimmon); padding: 8px 20px;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover { background: var(--persimmon); color: white; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 96px 56px 72px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 55% at 50% -5%, rgba(210,85,47,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--persimmon-bright); margin-bottom: 28px;
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; display: block; width: 28px; height: 1px;
+      background: var(--persimmon-bright); opacity: 0.5;
+    }
+    .hero h1 {
+      font-family: var(--corm);
+      font-size: clamp(3.5rem, 7vw, 5.5rem);
+      font-weight: 500; color: var(--cream-pure);
+      line-height: 1.05; letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--persimmon-bright); }
+    .hero-sub {
+      font-family: var(--news); font-size: 1.15rem; font-weight: 300;
+      color: var(--silver-bright); max-width: 600px;
+      margin: 0 auto 52px; line-height: 1.65; font-style: italic;
+    }
+
+    /* ── LETTER STRIP ── */
+    .strip {
+      display: flex; justify-content: center;
+      max-width: 680px; margin: 0 auto;
+      border-top: 1px solid rgba(185,194,205,0.2);
+    }
+    .strip-item {
+      flex: 1; padding: 20px 8px 18px;
+      text-align: center; cursor: pointer;
+      border-top: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .strip-item:hover { border-top-color: rgba(226,107,68,0.5); }
+    .strip-item.active { border-top-color: var(--persimmon-bright); }
+    .strip-item .big {
+      font-family: var(--corm); font-size: 2.4rem; font-weight: 600;
+      color: var(--silver-bright); display: block; line-height: 1; transition: color 0.2s;
+    }
+    .strip-item.active .big { color: var(--persimmon-bright); }
+    .strip-item .sm {
+      font-family: var(--sans); font-size: 9px; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--silver); display: block; margin-top: 5px; transition: color 0.2s;
+    }
+    .strip-item.active .sm { color: var(--silver-bright); }
+
+    /* ── INTRO ── */
+    .intro {
+      border-bottom: 1px solid var(--hair);
+      padding: 72px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .intro-left { }
+    .intro-ey {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--persimmon); display: block; margin-bottom: 16px;
+    }
+    .intro-left h2 {
+      font-family: var(--corm); font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 500; color: var(--navy); line-height: 1.2;
+    }
+    .intro-left h2 em { font-style: italic; color: var(--slate); }
+    .intro-right {
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .intro-right p {
+      font-family: var(--news); font-size: 1.05rem;
+      color: var(--slate); line-height: 1.8;
+    }
+    .intro-meta {
+      display: flex; gap: 32px; margin-top: 28px;
+      padding-top: 28px; border-top: 1px solid var(--hair);
+    }
+    .meta-item { text-align: center; }
+    .meta-num {
+      font-family: var(--corm); font-size: 2rem; font-weight: 500;
+      color: var(--persimmon); display: block; line-height: 1;
+    }
+    .meta-label {
+      font-family: var(--sans); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--silver); display: block; margin-top: 6px;
+    }
+
+    /* ── CARDS ── */
+    .cards {
+      max-width: 1080px; margin: 0 auto;
+      padding: 64px 56px 88px;
+    }
+    .card {
+      display: grid;
+      grid-template-columns: 104px 1fr;
+      gap: 0 52px;
+      padding: 60px 0;
+      border-bottom: 1px solid var(--hair);
+      align-items: start;
+    }
+    .card:last-child { border-bottom: none; }
+
+    .card-left {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 14px;
+      position: sticky; top: 80px;
+    }
+    .card-circle {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--corm); font-size: 2.8rem; font-weight: 600;
+      color: var(--cream-pure);
+      transition: background 0.25s, transform 0.25s;
+    }
+    .card:hover .card-circle { background: var(--persimmon); transform: scale(1.05); }
+    .card-num {
+      font-family: var(--sans); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--silver);
+    }
+    .card-behavior {
+      font-family: var(--sans); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--navy); background: var(--cream);
+      border: 1px solid var(--hair);
+      padding: 4px 10px; text-align: center;
+      transition: background 0.2s, color 0.2s;
+    }
+    .card:hover .card-behavior { background: var(--persimmon); color: white; border-color: var(--persimmon); }
+    .card-divider { width: 1px; height: 24px; background: var(--hair); }
+
+    .card-right { padding-top: 4px; }
+    .card-kw {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--persimmon); display: block; margin-bottom: 12px;
+    }
+    .card-title {
+      font-family: var(--corm); font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 500; color: var(--navy); line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .card-desc {
+      font-family: var(--news); font-size: 1.05rem; font-weight: 400;
+      font-style: italic; color: var(--slate);
+      margin-bottom: 24px; line-height: 1.7;
+    }
+
+    /* asset tags */
+    .asset-tags {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      padding: 20px 0;
+      border-top: 1px solid var(--hair);
+      border-bottom: 1px solid var(--hair);
+      margin-bottom: 0;
+    }
+    .tag {
+      font-family: var(--sans); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--slate);
+      border: 1px solid var(--hair);
+      padding: 5px 12px;
+      background: var(--cream-pure);
+      transition: all 0.15s;
+    }
+    .tag:hover { border-color: var(--persimmon); color: var(--persimmon); }
+
+    /* ── BEHAVIORS BAND ── */
+    .behaviors {
+      background: var(--cream); padding: 0 56px;
+      border-top: 1px solid var(--hair);
+      border-bottom: 1px solid var(--hair);
+    }
+    .beh-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(6, 1fr);
+    }
+    .beh-cell {
+      padding: 28px 16px;
+      text-align: center;
+      border-right: 1px solid var(--hair);
+      position: relative;
+    }
+    .beh-cell:last-child { border-right: none; }
+    .beh-letter {
+      font-family: var(--corm); font-size: 1.5rem; font-weight: 500;
+      color: var(--persimmon); display: block; line-height: 1; margin-bottom: 6px;
+    }
+    .beh-action {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--navy); display: block; margin-bottom: 4px;
+    }
+    .beh-noun {
+      font-family: var(--sans); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--silver);
+    }
+
+    /* ── REFERENCE GRID ── */
+    .reference { background: var(--navy); padding: 88px 56px; }
+    .ref-inner { max-width: 1080px; margin: 0 auto; }
+    .ref-ey {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--persimmon-bright);
+      display: flex; align-items: center; gap: 14px; margin-bottom: 36px;
+    }
+    .ref-ey::after { content: ''; flex: 1; height: 1px; background: rgba(185,194,205,0.18); }
+    .ref-inner h2 {
+      font-family: var(--corm); font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500; color: var(--cream-pure);
+      line-height: 1.15; margin-bottom: 48px; max-width: 600px;
+    }
+    .ref-inner h2 em { font-style: italic; color: var(--silver-bright); }
+    .ref-grid {
+      display: grid; grid-template-columns: repeat(6, 1fr);
+      gap: 1px; background: rgba(185,194,205,0.12);
+      border: 1px solid rgba(185,194,205,0.12);
+    }
+    .ref-cell {
+      background: var(--navy-soft); padding: 28px 20px; transition: background 0.2s;
+    }
+    .ref-cell:hover { background: rgba(210,85,47,0.14); }
+    .ref-cell .ltr {
+      font-family: var(--corm); font-size: 2.2rem; font-weight: 600;
+      color: var(--persimmon-bright); line-height: 1; margin-bottom: 4px;
+    }
+    .ref-cell .wrd {
+      font-family: var(--sans); font-size: 10px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--silver-bright); display: block; margin-bottom: 4px;
+    }
+    .ref-cell .act {
+      font-family: var(--sans); font-size: 9px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--persimmon-bright); display: block; margin-bottom: 10px;
+    }
+    .ref-cell .def {
+      font-family: var(--news); font-size: 0.875rem;
+      color: var(--silver); line-height: 1.55;
+    }
+
+    /* ── CTA ── */
+    .cta { max-width: 800px; margin: 0 auto; padding: 88px 56px; text-align: center; }
+    .cta-ey {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--persimmon); display: block; margin-bottom: 20px;
+    }
+    .cta h2 {
+      font-family: var(--corm); font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 500; color: var(--navy); line-height: 1.2; margin-bottom: 24px;
+    }
+    .cta h2 em { font-style: italic; color: var(--persimmon); }
+    .cta p {
+      font-family: var(--news); font-size: 1.1rem;
+      color: var(--slate); line-height: 1.75; margin-bottom: 40px;
+    }
+    .btn-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-p {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: white; background: var(--persimmon);
+      padding: 15px 38px; text-decoration: none; transition: background 0.2s; display: inline-block;
+    }
+    .btn-p:hover { background: var(--navy); }
+    .btn-g {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--navy); border: 1px solid var(--navy);
+      padding: 15px 38px; text-decoration: none; transition: all 0.2s; display: inline-block;
+    }
+    .btn-g:hover { background: var(--navy); color: white; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--hair); padding: 28px 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .foot-logo {
+      font-family: var(--corm); font-size: 1.1rem; font-weight: 500;
+      color: var(--navy); text-decoration: none;
+    }
+    .foot-logo span { color: var(--persimmon); }
+    footer small {
+      font-family: var(--sans); font-size: 11px; color: var(--silver); letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hero { padding: 64px 24px 52px; }
+      .strip-item .sm { display: none; }
+      .strip-item .big { font-size: 1.75rem; }
+      .intro { grid-template-columns: 1fr; gap: 32px; padding: 52px 24px; }
+      .cards { padding: 40px 24px 64px; }
+      .card { grid-template-columns: 1fr; padding: 44px 0; }
+      .card-left { flex-direction: row; position: static; margin-bottom: 20px; }
+      .card-divider { display: none; }
+      .card-circle { width: 60px; height: 60px; font-size: 2.1rem; }
+      .behaviors { padding: 0 24px; }
+      .beh-inner { grid-template-columns: repeat(3, 1fr); }
+      .beh-cell:nth-child(3) { border-right: none; }
+      .reference { padding: 64px 24px; }
+      .ref-grid { grid-template-columns: repeat(3, 1fr); }
+      .cta { padding: 64px 24px; }
+      footer { flex-direction: column; gap: 10px; padding: 28px 24px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://leeann-silver.github.io/LASilverComm/" class="nav-logo">L<span>@</span>Silver</a>
+  <ul class="nav-links">
+    <li><a href="#framework">The Framework</a></li>
+    <li><a href="#behaviors">The Behaviors</a></li>
+    <li><a href="https://leeann-silver.github.io/LASilverComm/#services">Services</a></li>
+  </ul>
+  <a href="https://leeann-silver.github.io/LASilverComm/#contact" class="nav-cta">Start with an Audit</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-eyebrow">LASilver Communications · The Framework</p>
+  <h1>The <em>RECORD</em><br>Framework</h1>
+  <p class="hero-sub">Six layers. Six behaviors. The system for building authority that AI recognizes and recommends.</p>
+  <div class="strip" id="strip">
+    <div class="strip-item" data-i="0"><span class="big">R</span><span class="sm">Releases</span></div>
+    <div class="strip-item" data-i="1"><span class="big">E</span><span class="sm">Expertise</span></div>
+    <div class="strip-item" data-i="2"><span class="big">C</span><span class="sm">Corroboration</span></div>
+    <div class="strip-item" data-i="3"><span class="big">O</span><span class="sm">Owned</span></div>
+    <div class="strip-item" data-i="4"><span class="big">R</span><span class="sm">References</span></div>
+    <div class="strip-item" data-i="5"><span class="big">D</span><span class="sm">Documentation</span></div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section style="border-bottom: 1px solid var(--hair);">
+  <div class="intro">
+    <div class="intro-left">
+      <span class="intro-ey">The Framework</span>
+      <h2>Authority isn't built through<br><em>isolated campaigns.</em><br>It compounds.</h2>
+    </div>
+    <div class="intro-right">
+      <p>A growing body of work — built in layers, practiced as behaviors — is the only thing that causes AI and buyers to reach for your name first. The RECORD Framework gives that body of work a structure.</p>
+      <div class="intro-meta">
+        <div class="meta-item">
+          <span class="meta-num">6</span>
+          <span class="meta-label">Layers</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-num">6</span>
+          <span class="meta-label">Behaviors</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-num">1</span>
+          <span class="meta-label">Record</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="cards" id="framework">
+
+  <!-- R — RELEASES -->
+  <div class="card">
+    <div class="card-left">
+      <div class="card-circle">R</div>
+      <div class="card-divider"></div>
+      <span class="card-num">01 / 06</span>
+      <div class="card-divider"></div>
+      <span class="card-behavior">Publish</span>
+    </div>
+    <div class="card-right">
+      <span class="card-kw">Releases</span>
+      <h2 class="card-title">The steady stream of ideas and assets from which authority compounds.</h2>
+      <p class="card-desc">Publishing is the foundation. Without a consistent output of credible content, there is no record to build on. What you publish becomes the raw material AI indexes, buyers discover, and journalists reference.</p>
+      <div class="asset-tags">
+        <span class="tag">Articles</span>
+        <span class="tag">Reports</span>
+        <span class="tag">News</span>
+        <span class="tag">Research</span>
+        <span class="tag">Announcements</span>
+        <span class="tag">Insights</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- E — EXPERTISE -->
+  <div class="card">
+    <div class="card-left">
+      <div class="card-circle">E</div>
+      <div class="card-divider"></div>
+      <span class="card-num">02 / 06</span>
+      <div class="card-divider"></div>
+      <span class="card-behavior">Think</span>
+    </div>
+    <div class="card-right">
+      <span class="card-kw">Expertise</span>
+      <h2 class="card-title">Original thinking worth citing. AI rewards knowledge, not slogans.</h2>
+      <p class="card-desc">Content can be produced by anyone. Expertise — the kind that produces a new framework, a named idea, a category-defining perspective — can only come from people who have lived in their domain long enough to see what others miss.</p>
+      <div class="asset-tags">
+        <span class="tag">Analysis</span>
+        <span class="tag">Frameworks</span>
+        <span class="tag">Research</span>
+        <span class="tag">Perspectives</span>
+        <span class="tag">Category thinking</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- C — CORROBORATION -->
+  <div class="card">
+    <div class="card-left">
+      <div class="card-circle">C</div>
+      <div class="card-divider"></div>
+      <span class="card-num">03 / 06</span>
+      <div class="card-divider"></div>
+      <span class="card-behavior">Validate</span>
+    </div>
+    <div class="card-right">
+      <span class="card-kw">Corroboration</span>
+      <h2 class="card-title">Independent proof that strengthens credibility when trusted sources reinforce the same story.</h2>
+      <p class="card-desc">You cannot declare authority. You can only earn it — and then make sure the evidence is findable. Corroboration is the layer where third parties do the vouching: media, analysts, peers, and customers all saying the same thing from their own independent positions.</p>
+      <div class="asset-tags">
+        <span class="tag">Earned media</span>
+        <span class="tag">Podcasts</span>
+        <span class="tag">Analysts</span>
+        <span class="tag">Guest articles</span>
+        <span class="tag">Influencers</span>
+        <span class="tag">Customer stories</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- O — OWNED -->
+  <div class="card">
+    <div class="card-left">
+      <div class="card-circle">O</div>
+      <div class="card-divider"></div>
+      <span class="card-num">04 / 06</span>
+      <div class="card-divider"></div>
+      <span class="card-behavior">Own</span>
+    </div>
+    <div class="card-right">
+      <span class="card-kw">Owned</span>
+      <h2 class="card-title">The source of truth you control — the foundation AI references.</h2>
+      <p class="card-desc">Earned media builds the record. Owned channels anchor it. Your website, your pillar content, your knowledge assets are the home base AI triangulates back to when verifying who you are and what you stand for. If the foundation is weak, everything built on it is unstable.</p>
+      <div class="asset-tags">
+        <span class="tag">Website</span>
+        <span class="tag">Pillar pages</span>
+        <span class="tag">Knowledge assets</span>
+        <span class="tag">Profiles</span>
+        <span class="tag">FAQs</span>
+        <span class="tag">Blogs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- R — REFERENCES -->
+  <div class="card">
+    <div class="card-left">
+      <div class="card-circle">R</div>
+      <div class="card-divider"></div>
+      <span class="card-num">05 / 06</span>
+      <div class="card-divider"></div>
+      <span class="card-behavior">Observe</span>
+    </div>
+    <div class="card-right">
+      <span class="card-kw">References</span>
+      <h2 class="card-title">Citations and signals that reinforce authority when others point back to your ideas.</h2>
+      <p class="card-desc">The record compounds when others begin building on it. Every AI citation, backlink, brand mention, and entity relationship is a vote of confidence that makes the next one more likely. References are the layer you watch — the signal that tells you whether the record is working.</p>
+      <div class="asset-tags">
+        <span class="tag">AI citations</span>
+        <span class="tag">Brand mentions</span>
+        <span class="tag">Backlinks</span>
+        <span class="tag">Competitive visibility</span>
+        <span class="tag">Entity relationships</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- D — DOCUMENTATION -->
+  <div class="card">
+    <div class="card-left">
+      <div class="card-circle">D</div>
+      <div class="card-divider"></div>
+      <span class="card-num">06 / 06</span>
+      <div class="card-divider"></div>
+      <span class="card-behavior">Structure</span>
+    </div>
+    <div class="card-right">
+      <span class="card-kw">Documentation</span>
+      <h2 class="card-title">Structured signals machines understand. Authority must be machine-readable.</h2>
+      <p class="card-desc">If AI can't parse it, AI can't cite it. Schema markup, metadata, entity consistency, and structured content aren't SEO tactics — they're the technical layer that lets AI accurately identify who you are, attribute your ideas, and surface your record with confidence.</p>
+      <div class="asset-tags">
+        <span class="tag">Schema</span>
+        <span class="tag">Metadata</span>
+        <span class="tag">Entity consistency</span>
+        <span class="tag">Profiles</span>
+        <span class="tag">Structured content</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- BEHAVIORS BAND -->
+<section class="behaviors" id="behaviors">
+  <div class="beh-inner">
+    <div class="beh-cell">
+      <span class="beh-letter">R</span>
+      <span class="beh-action">Publish</span>
+      <span class="beh-noun">Releases</span>
+    </div>
+    <div class="beh-cell">
+      <span class="beh-letter">E</span>
+      <span class="beh-action">Think</span>
+      <span class="beh-noun">Expertise</span>
+    </div>
+    <div class="beh-cell">
+      <span class="beh-letter">C</span>
+      <span class="beh-action">Validate</span>
+      <span class="beh-noun">Corroboration</span>
+    </div>
+    <div class="beh-cell">
+      <span class="beh-letter">O</span>
+      <span class="beh-action">Own</span>
+      <span class="beh-noun">Owned</span>
+    </div>
+    <div class="beh-cell">
+      <span class="beh-letter">R</span>
+      <span class="beh-action">Observe</span>
+      <span class="beh-noun">References</span>
+    </div>
+    <div class="beh-cell">
+      <span class="beh-letter">D</span>
+      <span class="beh-action">Structure</span>
+      <span class="beh-noun">Documentation</span>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCE GRID -->
+<section class="reference">
+  <div class="ref-inner">
+    <p class="ref-ey">The RECORD Framework · Quick Reference</p>
+    <h2>Six layers.<br><em>One record.</em></h2>
+    <div class="ref-grid">
+      <div class="ref-cell">
+        <div class="ltr">R</div>
+        <span class="wrd">Releases</span>
+        <span class="act">Publish</span>
+        <p class="def">The steady stream of ideas and assets from which authority compounds.</p>
+      </div>
+      <div class="ref-cell">
+        <div class="ltr">E</div>
+        <span class="wrd">Expertise</span>
+        <span class="act">Think</span>
+        <p class="def">Original thinking worth citing. AI rewards knowledge, not slogans.</p>
+      </div>
+      <div class="ref-cell">
+        <div class="ltr">C</div>
+        <span class="wrd">Corroboration</span>
+        <span class="act">Validate</span>
+        <p class="def">Independent proof that strengthens credibility when trusted sources reinforce the same story.</p>
+      </div>
+      <div class="ref-cell">
+        <div class="ltr">O</div>
+        <span class="wrd">Owned</span>
+        <span class="act">Own</span>
+        <p class="def">The source of truth you control — the foundation AI references.</p>
+      </div>
+      <div class="ref-cell">
+        <div class="ltr">R</div>
+        <span class="wrd">References</span>
+        <span class="act">Observe</span>
+        <p class="def">Citations and signals that reinforce authority when others point back to your ideas.</p>
+      </div>
+      <div class="ref-cell">
+        <div class="ltr">D</div>
+        <span class="wrd">Documentation</span>
+        <span class="act">Structure</span>
+        <p class="def">Structured signals machines understand. Authority must be machine-readable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <span class="cta-ey">Start Here</span>
+  <h2>Find out where your<br><em>record stands today.</em></h2>
+  <p>Before strategy, diagnosis. The RECORD Audit examines how AI and buyers currently understand your category, identifies exactly which layers of your record are missing or weak, and delivers a clear roadmap for closing the gap.</p>
+  <div class="btn-row">
+    <a href="https://leeann-silver.github.io/LASilverComm/#contact" class="btn-p">Start with an Audit</a>
+    <a href="https://leeann-silver.github.io/LASilverComm/" class="btn-g">Learn More</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://leeann-silver.github.io/LASilverComm/" class="foot-logo">L<span>@</span>Silver Communications</a>
+  <small>© 2026 LASilver Communications. All rights reserved.</small>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.strip-item');
+  const cards = document.querySelectorAll('.card');
+  const navH = document.querySelector('nav').offsetHeight;
+
+  items.forEach((el, i) => {
+    el.addEventListener('click', () => {
+      const top = cards[i].getBoundingClientRect().top + scrollY - navH - 20;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const i = [...cards].indexOf(e.target);
+        items.forEach((el, j) => el.classList.toggle('active', i === j));
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+
+  cards.forEach(c => obs.observe(c));
+</script>
+</body>
+</html>
