@@ -1,800 +1,707 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=.0">
-  <title>LASilver Communications — Build the Good Record</title>
-  <meta name="description" content="LASilver Communications helps organizations become the trusted source in their category.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy:   #1a2d5a;
-      --gold:   #c9a558;
-      --white:  #fafaf8;
-      --mid:    #5a6a8a;
-      --border: #d8d4cc;
-      --serif:  'Cormorant Garamond', Georgia, serif;
-      --sans:   'Inter', system-ui, sans-serif;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--white);
-      color: var(--navy);
-      font-family: var(--sans);
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L@Silver Communications — Build the Record. Own the Narrative.</title>
+<meta name="description" content="LASilver Communications helps organizations become the trusted source in their category.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="256x256" href="assets/favicon-256.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+/* ── Brand palette ── */
+--navy: #15233c;
+--navy-soft: #243650;
+--persimmon: #d2552f;        /* accent · the @ */
+--persimmon-bright: #e26b44; /* accent on navy */
+--slate: #5d6b80;            /* body & captions */
+--silver: #8d97a6;           /* the "Silver" · rings */
+--silver-bright: #b9c2cd;    /* on-navy text */
+--cream: #f3f4f6;            /* page ground */
+--cream-pure: #fafbfc;       /* lightest surface */
+--hair: #dadee4;             /* rules & borders */
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.5rem 4rem;
-      background: rgba(250,250,248,.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border-color .3s;
-    }
-    nav.scrolled { border-bottom-color: var(--border); }
-    .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.15rem; font-weight: 300; letter-spacing: .01em;
-      color: var(--navy); text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      font-size: .72rem; font-weight: 500; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--mid); text-decoration: none;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--navy); }
-    .nav-cta {
-      font-size: .72rem; font-weight: 600; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--white);
-      background: var(--navy); text-decoration: none;
-      padding: .65rem 1.5rem; transition: background .2s;
-    }
-    .nav-cta:hover { background: var(--gold); }
+/* legacy aliases kept for existing rules */
+--gold: #d2552f;
+--white: #fafbfc;
+--mid: #5d6b80;
+--border: #dadee4;
 
-    /* ── SHARED ── */
-    section { padding: 8rem 4rem; }
-    .container       { max-width: 1200px; margin: 0 auto; }
-    .container-mid   { max-width: 860px;  margin: 0 auto; }
-    .container-narrow{ max-width: 640px;  margin: 0 auto; }
+--serif: 'Cormorant Garamond', Garamond, Georgia, serif;
+--news:  'Newsreader', Georgia, 'Times New Roman', serif;
+--sans:  'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+background: var(--cream);
+color: var(--navy);
+font-family: var(--sans);
+font-weight: 400;
+font-size: 16px;
+line-height: 1.7;
+-webkit-font-smoothing: antialiased;
+}
 
-    .section-label {
-      font-family: var(--sans);
-      font-size: .7rem; font-weight: 500; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--mid);
-      padding-bottom: 1rem; border-bottom: 1px solid var(--border);
-      margin-bottom: 3.5rem; display: block;
-    }
-    .gold-tag {
-      font-size: .7rem; font-weight: 600; letter-spacing: .15em;
-      text-transform: uppercase; color: var(--gold);
-      display: block; margin-bottom: 1rem;
-    }
+/* ── WORDMARK + ICON ── */
+.wm {
+font-family: var(--serif); font-weight: 500;
+letter-spacing: -.005em; white-space: nowrap; color: var(--navy);
+}
+.wm .at { color: var(--persimmon); display: inline-block; transform: translateY(.02em); }
+.las { font-family: var(--serif); font-weight: 500; white-space: nowrap; line-height: 1; }
+.las .at { color: var(--persimmon); display: inline-block; transform: translateY(.02em); }
 
-    /* ── HERO ── */
-    #hero {
-      padding-top: 12rem; padding-bottom: 9rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero-eyebrow {
-      font-size: .7rem; font-weight: 600; letter-spacing: .15em;
-      text-transform: uppercase; color: var(--gold);
-      display: block; margin-bottom: 2.5rem;
-    }
-    h1.hero {
-      font-family: var(--serif);
-      font-size: clamp(3.5rem, 8vw, 7.5rem);
-      font-weight: 300; line-height: 1.0; letter-spacing: -.02em;
-      color: var(--navy); margin-bottom: 2.5rem;
-    }
-    h1.hero em { font-style: italic; }
-    .hero-sub {
-      font-size: 1.15rem; color: var(--mid);
-      max-width: 50ch; line-height: 1.7;
-      font-family: var(--serif); font-weight: 300;
-      margin-bottom: 3rem;
-    }
-    .hero-cta {
-      display: inline-block;
-      font-size: .72rem; font-weight: 600; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--white);
-      background: var(--navy); text-decoration: none;
-      padding: .9rem 2.25rem; transition: background .2s;
-    }
-    .hero-cta:hover { background: var(--gold); }
+/* ── NAV ── */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+display: flex; align-items: center; justify-content: space-between;
+padding: 1.25rem 4rem;
+background: rgba(243,244,246,.94);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid transparent;
+transition: border-color .3s;
+}
+nav.scrolled { border-bottom-color: var(--hair); }
+.nav-brand { display: flex; align-items: center; gap: .85rem; text-decoration: none; }
+.nav-chip {
+width: 38px; height: 38px; border-radius: 50%;
+background: var(--navy);
+display: flex; align-items: center; justify-content: center;
+position: relative; flex: none;
+}
+.nav-chip::before {
+content: ""; position: absolute; inset: 4px;
+border: 1px solid var(--silver); border-radius: 50%; opacity: .5;
+}
+.nav-chip .las { font-size: 15px; color: var(--cream); }
+.nav-chip .las .at { color: var(--persimmon-bright); }
+.nav-logo { display: flex; flex-direction: column; line-height: 1; }
+.nav-logo .wm { font-size: 1.4rem; }
+.nav-comms {
+font-family: var(--sans); font-size: .56rem; font-weight: 600;
+letter-spacing: .32em; text-transform: uppercase; color: var(--slate);
+margin-top: 5px; padding-left: .06em;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+text-transform: uppercase; color: var(--slate); text-decoration: none;
+transition: color .2s;
+}
+.nav-links a:hover { color: var(--persimmon); }
+.nav-cta {
+font-size: .72rem; font-weight: 600; letter-spacing: .1em;
+text-transform: uppercase; color: var(--cream-pure);
+background: var(--navy); text-decoration: none;
+padding: .65rem 1.5rem; transition: background .2s;
+}
+.nav-cta:hover { background: var(--persimmon); }
 
-    /* ── THE SHIFT ── */
-    #shift {
-      background: var(--navy); color: var(--white);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .shift-grid {
-      display: grid; grid-template-columns: 1fr 1.4fr;
-      gap: 7rem; align-items: start;
-    }
-    .shift-left { position: sticky; top: 6rem; }
-    .shift-tag {
-      font-size: .7rem; font-weight: 600; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--gold);
-      display: block; margin-bottom: 1.5rem;
-    }
-    h2.shift {
-      font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      font-weight: 300; line-height: 1.05; letter-spacing: -.02em;
-      color: var(--white);
-    }
-    h2.shift em { font-style: italic; color: var(--gold); }
-    .shift-right { padding-top: .5rem; }
-    .shift-verdict {
-      font-family: var(--serif); font-style: italic;
-      font-size: 1.2rem; color: var(--gold);
-      line-height: 1.55; margin-bottom: 2rem;
-      padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.1);
-    }
-    .shift-body {
-      font-size: 1rem; font-weight: 300;
-      color: rgba(250,250,248,.6); line-height: 1.85;
-    }
+/* ── SHARED ── */
+section { padding: 8rem 4rem; }
+.container { max-width: 1200px; margin: 0 auto; }
+.container-mid { max-width: 860px; margin: 0 auto; }
+.container-narrow{ max-width: 640px; margin: 0 auto; }
 
-    /* ── THE GOOD RECORD ── */
-    #record { border-bottom: 1px solid var(--border); }
-    .record-grid {
-      display: grid; grid-template-columns: 1fr 1.4fr;
-      gap: 7rem; align-items: start;
-    }
-    .record-left { position: sticky; top: 6rem; }
-    h2.record {
-      font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      font-weight: 300; line-height: 1.05; letter-spacing: -.02em;
-      color: var(--navy); margin-bottom: 1rem;
-    }
-    h2.record em { font-style: italic; }
-    .record-right { padding-top: .5rem; }
-    .record-lead {
-      font-family: var(--serif);
-      font-size: 1.25rem; font-weight: 300; line-height: 1.65;
-      color: var(--navy); margin-bottom: 2rem;
-    }
-    .record-list {
-      list-style: none; display: flex; flex-direction: column;
-      gap: .6rem; margin-bottom: 2rem;
-      border-top: 1px solid var(--border); padding-top: 1.75rem;
-    }
-    .record-list li {
-      font-size: .92rem; color: var(--mid);
-      display: flex; align-items: baseline; gap: .75rem;
-    }
-    .record-list li::before {
-      content: '—'; color: var(--border);
-      flex-shrink: 0; font-size: .75rem;
-    }
-    .record-close {
-      font-family: var(--serif); font-style: italic;
-      font-size: 1rem; color: var(--gold);
-      padding-top: 1.75rem; border-top: 1px solid var(--border);
-    }
+.section-label {
+font-family: var(--sans);
+font-size: .7rem; font-weight: 600; letter-spacing: .2em;
+text-transform: uppercase; color: var(--persimmon);
+padding-bottom: 1rem; border-bottom: 1px solid var(--hair);
+margin-bottom: 3.5rem; display: block;
+}
+.gold-tag {
+font-size: .7rem; font-weight: 600; letter-spacing: .2em;
+text-transform: uppercase; color: var(--persimmon);
+display: block; margin-bottom: 1rem;
+}
 
-    /* ── WHAT WE DO ── */
-    #what {
-      background: var(--navy); color: var(--white);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    h2.what {
-      font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      font-weight: 300; line-height: 1.05; letter-spacing: -.02em;
-      color: var(--white); margin-bottom: 2.5rem; max-width: 18ch;
-    }
-    h2.what em { font-style: italic; color: var(--gold); }
-    .what-grid {
-      display: grid; grid-template-columns: 1fr 1.2fr;
-      gap: 7rem; align-items: start;
-    }
-    .what-left { position: sticky; top: 6rem; }
-    .what-body {
-      font-size: 1.05rem; font-weight: 300;
-      color: rgba(250,250,248,.65); line-height: 1.85;
-    }
-    .what-body p + p { margin-top: 1.25rem; }
-    .what-body strong {
-      color: var(--white); font-weight: 400;
-      font-family: var(--serif); font-size: 1.15rem;
-      font-style: italic; display: block;
-      margin-top: 2rem; padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,.1);
-    }
+/* ── HERO ── */
+#hero {
+padding-top: 12rem; padding-bottom: 9rem;
+border-bottom: 1px solid var(--hair);
+}
+.hero-eyebrow {
+font-size: .7rem; font-weight: 600; letter-spacing: .2em;
+text-transform: uppercase; color: var(--persimmon);
+display: block; margin-bottom: 2.5rem;
+}
+h1.hero {
+font-family: var(--serif);
+font-size: clamp(3.5rem, 8vw, 7.5rem);
+font-weight: 500; line-height: 1.0; letter-spacing: -.02em;
+color: var(--navy); margin-bottom: 2.5rem;
+}
+h1.hero em { font-style: italic; font-weight: 400; }
+.hero-sub {
+font-size: 1.4rem; color: var(--slate);
+max-width: 52ch; line-height: 1.55;
+font-family: var(--news); font-weight: 300; font-style: italic;
+margin-bottom: 3rem;
+}
+.hero-cta {
+display: inline-block;
+font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+text-transform: uppercase; color: var(--cream-pure);
+background: var(--navy); text-decoration: none;
+padding: .9rem 2.25rem; transition: background .2s;
+}
+.hero-cta:hover { background: var(--persimmon); }
 
-    /* ── THE RECORD FRAMEWORK ── */
-    #framework {
-      border-bottom: 1px solid var(--border);
-    }
-    .framework-grid {
-      display: grid; grid-template-columns: 1fr 1.6fr;
-      gap: 7rem; align-items: start;
-    }
-    .framework-left { position: sticky; top: 6rem; }
-    h2.framework {
-      font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      font-weight: 300; line-height: 1.05; letter-spacing: -.02em;
-      color: var(--navy); margin-bottom: 1.5rem;
-    }
-    h2.framework em { font-style: italic; }
-    .framework-cta {
-      display: inline-block;
-      font-size: .72rem; font-weight: 600; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--white);
-      background: var(--navy); text-decoration: none;
-      padding: .85rem 2rem; transition: background .2s; margin-top: .5rem;
-    }
-    .framework-cta:hover { background: var(--gold); }
-    .record-letters {
-      display: grid; grid-template-columns: repeat(6, 1fr);
-      border-top: 1px solid var(--border);
-      border-left: 1px solid var(--border);
-      margin-bottom: 2.5rem;
-    }
-    .record-letter {
-      padding: 1.5rem 1rem;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-    .record-letter .ltr {
-      font-family: var(--serif);
-      font-size: 2rem; font-weight: 300; color: var(--navy);
-      display: block; line-height: 1; margin-bottom: .4rem;
-    }
-    .record-letter .lbl {
-      font-size: .62rem; font-weight: 500; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--mid); display: block;
-      margin-bottom: .5rem;
-    }
-    .record-letter .act {
-      font-size: .6rem; font-weight: 600; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--gold); display: block;
-    }
-    .framework-intro {
-      font-family: var(--serif);
-      font-size: 1.2rem; font-weight: 300; line-height: 1.65;
-      color: var(--navy); margin-bottom: 2rem;
-    }
-    .framework-body {
-      font-size: .95rem; color: var(--mid); line-height: 1.85;
-      margin-bottom: 2rem;
-    }
-    .framework-tags {
-      display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem;
-      padding-top: 1.5rem; border-top: 1px solid var(--border);
-    }
-    .framework-tag {
-      font-size: .65rem; font-weight: 500; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--mid);
-      border: 1px solid var(--border); padding: .35rem .75rem;
-      background: transparent;
-    }
+/* ── THE SHIFT ── */
+#shift {
+background: var(--navy); color: var(--cream-pure);
+border-bottom: 1px solid rgba(185,194,205,.16);
+}
+.shift-grid {
+display: grid; grid-template-columns: 1fr 1.4fr;
+gap: 7rem; align-items: start;
+}
+.shift-left { position: sticky; top: 6rem; }
+.shift-tag {
+font-size: .7rem; font-weight: 600; letter-spacing: .2em;
+text-transform: uppercase; color: var(--persimmon-bright);
+display: block; margin-bottom: 1.5rem;
+}
+h2.shift {
+font-family: var(--serif);
+font-size: clamp(2.5rem, 5vw, 5rem);
+font-weight: 500; line-height: 1.05; letter-spacing: -.02em;
+color: var(--cream-pure);
+}
+h2.shift em { font-style: italic; font-weight: 400; color: var(--persimmon-bright); }
+.shift-right { padding-top: .5rem; }
+.shift-verdict {
+font-family: var(--news); font-style: italic; font-weight: 300;
+font-size: 1.2rem; color: var(--persimmon-bright);
+line-height: 1.55; margin-bottom: 2rem;
+padding-bottom: 2rem; border-bottom: 1px solid rgba(185,194,205,.16);
+}
+.shift-body {
+font-family: var(--news); font-size: 1.05rem; font-weight: 300;
+color: var(--silver-bright); line-height: 1.8;
+}
 
-    /* ── HOW TRUST COMPOUNDS ── */
-    #how { border-bottom: 1px solid var(--border); }
-    h2.how {
-      font-family: var(--serif);
-      font-size: clamp(2.25rem, 4vw, 4.5rem);
-      font-weight: 300; line-height: 1.05; letter-spacing: -.02em;
-      color: var(--navy); margin-bottom: 4rem;
-    }
-    h2.how em { font-style: italic; }
-    .steps-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--border);
-      border-left: 1px solid var(--border);
-    }
-    .step {
-      padding: 2.75rem 2.5rem;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .step-word {
-      font-family: var(--serif);
-      font-size: 2rem; font-weight: 300; letter-spacing: -.01em;
-      color: var(--navy); display: block; margin-bottom: 1.25rem;
-      padding-bottom: 1.25rem; border-bottom: 1px solid var(--border);
-    }
-    .step-body {
-      font-size: .9rem; color: var(--mid); line-height: 1.75;
-    }
+/* ── WHAT WE DO ── */
+#what {
+background: var(--navy); color: var(--cream-pure);
+border-bottom: 1px solid rgba(185,194,205,.16);
+}
+h2.what {
+font-family: var(--serif);
+font-size: clamp(2.5rem, 5vw, 5rem);
+font-weight: 500; line-height: 1.05; letter-spacing: -.02em;
+color: var(--cream-pure); margin-bottom: 2.5rem; max-width: 18ch;
+}
+h2.what em { font-style: italic; font-weight: 400; color: var(--persimmon-bright); }
+.what-grid {
+display: grid; grid-template-columns: 1fr 1.2fr;
+gap: 7rem; align-items: start;
+}
+.what-left { position: sticky; top: 6rem; }
+.what-body {
+font-family: var(--news); font-size: 1.1rem; font-weight: 300;
+color: var(--silver-bright); line-height: 1.8;
+}
+.what-body p + p { margin-top: 1.25rem; }
+.what-body strong {
+color: var(--cream-pure); font-weight: 400;
+font-family: var(--serif); font-size: 1.35rem;
+font-style: italic; display: block;
+margin-top: 2rem; padding-top: 2rem;
+border-top: 1px solid rgba(185,194,205,.16);
+}
 
-    /* ── SERVICES ── */
-    #services { border-bottom: 1px solid var(--border); }
-    h2.services {
-      font-family: var(--serif);
-      font-size: clamp(2.25rem, 4vw, 4.5rem);
-      font-weight: 300; line-height: 1.05; letter-spacing: -.02em;
-      color: var(--navy); margin-bottom: 1rem;
-    }
-    h2.services em { font-style: italic; }
-    .services-sub {
-      font-size: 1rem; color: var(--mid); max-width: 52ch;
-      line-height: 1.7; margin-bottom: 4rem;
-    }
-    .plans-grid {
-      display: grid; grid-template-columns: 1fr 1fr 1fr;
-      border-top: 1px solid var(--border);
-      border-left: 1px solid var(--border);
-    }
-    .plan {
-      padding: 3rem 2.5rem;
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      display: flex; flex-direction: column;
-    }
-    .plan.featured { background: var(--navy); }
-    .plan-tag {
-      font-size: .68rem; font-weight: 600; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--mid); margin-bottom: 1.5rem;
-    }
-    .plan.featured .plan-tag { color: var(--gold); }
-    .plan-name {
-      font-family: var(--serif);
-      font-size: 1.75rem; font-weight: 300; color: var(--navy);
-      letter-spacing: -.01em; margin-bottom: .4rem;
-    }
-    .plan.featured .plan-name { color: var(--white); }
-    .plan-subtitle {
-      font-family: var(--serif); font-style: italic;
-      font-size: .95rem; color: var(--mid); margin-bottom: 1.25rem;
-    }
-    .plan.featured .plan-subtitle { color: rgba(201,165,88,.8); }
-    .plan-period {
-      font-size: .75rem; color: var(--mid);
-      letter-spacing: .04em; margin-bottom: 1.75rem;
-    }
-    .plan.featured .plan-period { color: rgba(250,250,248,.35); }
-    .plan-divider {
-      width: 1.5rem; height: 1px;
-      background: var(--border); margin-bottom: 1.75rem;
-    }
-    .plan.featured .plan-divider { background: var(--gold); }
-    .plan-desc {
-      font-size: .9rem; color: var(--mid);
-      line-height: 1.75; flex: 1; margin-bottom: 2rem;
-    }
-    .plan.featured .plan-desc { color: rgba(250,250,248,.5); }
-    .plan-btn {
-      display: block; text-align: center;
-      font-family: var(--sans); font-size: .7rem; font-weight: 600;
-      letter-spacing: .1em; text-transform: uppercase;
-      text-decoration: none; padding: .85rem 1.5rem;
-      border: 1px solid var(--navy); color: var(--navy);
-      transition: all .2s; margin-top: auto;
-    }
-    .plan-btn:hover { background: var(--navy); color: var(--white); }
-    .plan.featured .plan-btn { border-color: var(--gold); color: var(--gold); }
-    .plan.featured .plan-btn:hover { background: var(--gold); color: var(--navy); }
+/* ── THE RECORD FRAMEWORK ── */
+#how { border-bottom: 1px solid var(--hair); }
+h2.how {
+font-family: var(--serif);
+font-size: clamp(2.25rem, 4vw, 4.5rem);
+font-weight: 500; line-height: 1.05; letter-spacing: -.02em;
+color: var(--navy); margin-bottom: 3.5rem;
+}
+h2.how em { font-style: italic; font-weight: 400; color: var(--persimmon); }
 
-    /* ── ORIGINAL GENERATION ── */
-    #og {
-      background: var(--navy);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      text-align: center;
-    }
-    .og-tag {
-      font-size: .7rem; font-weight: 600; letter-spacing: .15em;
-      text-transform: uppercase; color: var(--gold);
-      display: block; margin-bottom: 2rem;
-    }
-    h2.og {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 4rem);
-      font-weight: 300; line-height: 1.15; letter-spacing: -.02em;
-      color: var(--white); max-width: 26ch; margin: 0 auto 1.5rem;
-    }
-    h2.og em { font-style: italic; color: var(--gold); }
-    .og-sub {
-      font-family: var(--serif); font-style: italic;
-      font-size: 1.1rem; color: rgba(250,250,248,.45);
-      max-width: 40ch; margin: 0 auto;
-    }
+.rec-list { border-top: 1px solid var(--hair); max-width: 880px; }
+.rec-row {
+display: grid; grid-template-columns: 72px 1fr; gap: 2rem;
+align-items: center; padding: 1.9rem 0;
+border-bottom: 1px solid var(--hair);
+}
+.rec-letter {
+width: 64px; height: 64px; border-radius: 50%;
+background: var(--navy); color: var(--cream-pure);
+display: flex; align-items: center; justify-content: center;
+font-family: var(--serif); font-size: 2.1rem; font-weight: 600;
+transition: background .25s, transform .25s;
+}
+.rec-row:hover .rec-letter { background: var(--persimmon); transform: scale(1.06); }
+.rec-word {
+font-family: var(--serif); font-size: clamp(1.5rem, 2.4vw, 2rem);
+font-weight: 500; color: var(--navy); line-height: 1.15;
+letter-spacing: -.01em; margin-bottom: .3rem;
+}
+.rec-desc {
+font-family: var(--news); font-weight: 300; font-style: italic;
+font-size: 1.4rem; color: var(--navy-soft); line-height: 1.45;
+}
+.framework-explore {
+display: inline-block; margin-top: 3rem;
+font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+text-transform: uppercase; color: var(--cream-pure);
+background: var(--navy); text-decoration: none;
+padding: .9rem 2.25rem; transition: background .2s;
+}
+.framework-explore:hover { background: var(--persimmon); }
 
-    /* ── ABOUT ── */
-    #about { border-bottom: 1px solid var(--border); }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1.8fr;
-      gap: 7rem; align-items: start;
-    }
-    .about-sticky { position: sticky; top: 6rem; }
-    .about-img {
-      width: 100%; aspect-ratio: 4/5; object-fit: cover;
-      object-position: center center;
-      filter: grayscale(10%);
-      border: 8px solid var(--white);
-      box-shadow: 0 0 0 1px var(--border);
-    }
-    .about-caption {
-      font-size: .72rem; color: var(--mid); margin-top: .75rem; line-height: 1.5;
-    }
-    h2.about {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 3.75rem);
-      font-weight: 300; line-height: 1.1; letter-spacing: -.02em;
-      color: var(--navy); margin-bottom: 2.5rem;
-    }
-    h2.about em { font-style: italic; }
-    .about-body {
-      font-size: 1rem; color: var(--mid); line-height: 1.9; font-weight: 300;
-    }
-    .about-body p + p { margin-top: 1.35rem; }
-    .about-body strong { color: var(--navy); font-weight: 400; }
-    .about-sig {
-      margin-top: 2.5rem; padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      font-family: var(--serif); font-style: italic;
-      font-size: .95rem; color: var(--gold);
-    }
+/* ── SERVICES ── */
+#services { border-bottom: 1px solid var(--hair); }
+h2.services {
+font-family: var(--serif);
+font-size: clamp(2.25rem, 4vw, 4.5rem);
+font-weight: 500; line-height: 1.05; letter-spacing: -.02em;
+color: var(--navy); margin-bottom: 1rem;
+}
+h2.services em { font-style: italic; font-weight: 400; color: var(--persimmon); }
+.services-sub {
+font-family: var(--news); font-weight: 300; font-style: italic;
+font-size: 1.15rem; color: var(--slate); max-width: 52ch;
+line-height: 1.6; margin-bottom: 4rem;
+}
+.plans-grid {
+display: grid; grid-template-columns: 1fr 1fr 1fr;
+border-top: 1px solid var(--hair);
+border-left: 1px solid var(--hair);
+}
+.plan {
+padding: 3rem 2.5rem;
+border-right: 1px solid var(--hair);
+border-bottom: 1px solid var(--hair);
+display: flex; flex-direction: column;
+}
+.plan.featured { background: var(--navy); }
+.plan-tag {
+font-size: .68rem; font-weight: 600; letter-spacing: .16em;
+text-transform: uppercase; color: var(--slate); margin-bottom: 1.5rem;
+}
+.plan.featured .plan-tag { color: var(--persimmon-bright); }
+.plan-name {
+font-family: var(--serif);
+font-size: 1.75rem; font-weight: 500; color: var(--navy);
+letter-spacing: -.01em; margin-bottom: .4rem;
+}
+.plan.featured .plan-name { color: var(--cream-pure); }
+.plan-subtitle {
+font-family: var(--news); font-style: italic; font-weight: 300;
+font-size: 1rem; color: var(--slate); margin-bottom: 1.25rem;
+}
+.plan.featured .plan-subtitle { color: var(--silver-bright); }
+.plan-period {
+font-size: .75rem; color: var(--slate);
+letter-spacing: .04em; margin-bottom: 1.75rem;
+}
+.plan.featured .plan-period { color: rgba(185,194,205,.55); }
+.plan-divider {
+width: 1.5rem; height: 1px;
+background: var(--hair); margin-bottom: 1.75rem;
+}
+.plan.featured .plan-divider { background: var(--persimmon-bright); }
+.plan-desc {
+font-family: var(--news); font-weight: 300;
+font-size: .98rem; color: var(--slate);
+line-height: 1.7; flex: 1; margin-bottom: 2rem;
+}
+.plan.featured .plan-desc { color: var(--silver-bright); }
+.plan-btn {
+display: block; text-align: center;
+font-family: var(--sans); font-size: .7rem; font-weight: 600;
+letter-spacing: .1em; text-transform: uppercase;
+text-decoration: none; padding: .85rem 1.5rem;
+border: 1px solid var(--navy); color: var(--navy);
+transition: all .2s; margin-top: auto;
+}
+.plan-btn:hover { background: var(--navy); color: var(--cream-pure); }
+.plan.featured .plan-btn { border-color: var(--persimmon-bright); color: var(--persimmon-bright); }
+.plan.featured .plan-btn:hover { background: var(--persimmon-bright); color: var(--navy); }
 
-    /* ── CTA ── */
-    #contact {
-      background: var(--navy); color: var(--white); text-align: center;
-    }
-    .cta-eyebrow {
-      font-size: .7rem; font-weight: 600; letter-spacing: .15em;
-      text-transform: uppercase; color: var(--gold);
-      display: block; margin-bottom: 2rem;
-    }
-    h2.cta {
-      font-family: var(--serif);
-      font-size: clamp(2.5rem, 5vw, 5.5rem);
-      font-weight: 300; line-height: 1.05; letter-spacing: -.02em;
-      color: var(--white); margin-bottom: 1rem;
-    }
-    h2.cta em { font-style: italic; color: var(--gold); }
-    .cta-premise {
-      font-family: var(--serif); font-style: italic;
-      font-size: 1.1rem; color: rgba(250,250,248,.4);
-      margin-bottom: 3rem;
-    }
-    .cta-select {
-      display: block; width: 100%; max-width: 460px;
-      margin: 0 auto 1.25rem; padding: .9rem 1.25rem;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.15);
-      color: rgba(250,250,248,.6); font-family: var(--sans);
-      font-size: .9rem; outline: none; cursor: pointer;
-    }
-    .cta-submit {
-      display: block; width: 100%; max-width: 460px; margin: 0 auto 1.25rem;
-      padding: 1rem; background: var(--gold); color: var(--navy);
-      border: none; font-family: var(--sans);
-      font-size: .72rem; font-weight: 600; letter-spacing: .12em;
-      text-transform: uppercase; cursor: pointer; transition: opacity .2s;
-    }
-    .cta-submit:hover { opacity: .85; }
-    .cta-note { font-size: .72rem; color: rgba(250,250,248,.3); }
+/* ── ORIGINAL GENERATION ── */
+#og {
+background: var(--navy);
+border-bottom: 1px solid rgba(185,194,205,.16);
+text-align: center;
+}
+.og-tag {
+font-size: .7rem; font-weight: 600; letter-spacing: .2em;
+text-transform: uppercase; color: var(--persimmon-bright);
+display: block; margin-bottom: 2rem;
+}
+h2.og {
+font-family: var(--serif);
+font-size: clamp(2rem, 4vw, 4rem);
+font-weight: 500; line-height: 1.15; letter-spacing: -.02em;
+color: var(--cream-pure); max-width: 26ch; margin: 0 auto 1.5rem;
+}
+h2.og em { font-style: italic; font-weight: 400; color: var(--persimmon-bright); }
+.og-sub {
+font-family: var(--news); font-style: italic; font-weight: 300;
+font-size: 1.15rem; color: var(--silver-bright);
+max-width: 40ch; margin: 0 auto;
+}
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding: 2rem 4rem;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .footer-logo {
-      font-family: var(--serif);
-      font-size: 1rem; color: rgba(250,250,248,.4); text-decoration: none;
-    }
-    .footer-links { display: flex; gap: 2rem; list-style: none; }
-    .footer-links a {
-      font-size: .7rem; letter-spacing: .05em;
-      text-transform: uppercase; color: rgba(250,250,248,.3);
-      text-decoration: none; transition: color .2s;
-    }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: .7rem; color: rgba(250,250,248,.2); }
+/* ── ABOUT ── */
+#about { border-bottom: 1px solid var(--hair); }
+.about-grid {
+display: grid; grid-template-columns: 1fr 1.8fr;
+gap: 7rem; align-items: start;
+}
+.about-sticky { position: sticky; top: 6rem; }
+.about-img {
+width: 100%; aspect-ratio: 4/5; object-fit: cover;
+object-position: center center;
+filter: grayscale(10%);
+border: 8px solid var(--cream-pure);
+box-shadow: 0 0 0 1px var(--hair);
+}
+.about-caption {
+font-size: .72rem; color: var(--slate); margin-top: .75rem; line-height: 1.5;
+}
+h2.about {
+font-family: var(--serif);
+font-size: clamp(2rem, 4vw, 3.75rem);
+font-weight: 500; line-height: 1.1; letter-spacing: -.02em;
+color: var(--navy); margin-bottom: 2.5rem;
+}
+h2.about em { font-style: italic; font-weight: 400; }
+.about-body {
+font-family: var(--news); font-weight: 300;
+font-size: 1.05rem; color: var(--slate); line-height: 1.85;
+}
+.about-body p + p { margin-top: 1.35rem; }
+.about-body strong { color: var(--navy); font-weight: 400; }
+.about-sig {
+margin-top: 2.5rem; padding-top: 2rem;
+border-top: 1px solid var(--hair);
+font-family: var(--news); font-style: italic; font-weight: 300;
+font-size: 1rem; color: var(--persimmon);
+}
 
-    /* ── MOBILE ── */
-    @media (max-width: 900px) {
-      nav { padding: 1.25rem 1.5rem; }
-      .nav-links { display: none; }
-      section { padding: 5rem 1.5rem; }
-      .shift-grid, .record-grid, .what-grid, .about-grid, .framework-grid {
-        grid-template-columns: 1fr; gap: 3rem;
-      }
-      .shift-left, .record-left, .what-left, .about-sticky, .framework-left { position: static; }
-      .steps-grid { grid-template-columns: 1fr 1fr; }
-      .plans-grid { grid-template-columns: 1fr; }
-      .record-letters { grid-template-columns: repeat(3, 1fr); }
-      .record-letter:nth-child(3) { border-right: none; }
-      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
-      .footer-links { justify-content: center; }
-    }
-  </style>
+/* ── CTA ── */
+#contact {
+background: var(--navy); color: var(--cream-pure); text-align: center;
+}
+.cta-eyebrow {
+font-size: .7rem; font-weight: 600; letter-spacing: .2em;
+text-transform: uppercase; color: var(--persimmon-bright);
+display: block; margin-bottom: 2rem;
+}
+h2.cta {
+font-family: var(--serif);
+font-size: clamp(2.5rem, 5vw, 5.5rem);
+font-weight: 500; line-height: 1.05; letter-spacing: -.02em;
+color: var(--cream-pure); margin-bottom: 1rem;
+}
+h2.cta em { font-style: italic; font-weight: 400; color: var(--persimmon-bright); }
+.cta-premise {
+font-family: var(--news); font-style: italic; font-weight: 300;
+font-size: 1.15rem; color: var(--silver-bright);
+margin-bottom: 3rem;
+}
+.cta-select {
+display: block; width: 100%; max-width: 460px;
+margin: 0 auto 1.25rem; padding: .9rem 1.25rem;
+background: rgba(255,255,255,.06);
+border: 1px solid rgba(185,194,205,.22);
+color: var(--silver-bright); font-family: var(--sans);
+font-size: .9rem; outline: none; cursor: pointer;
+}
+.cta-submit {
+display: block; width: 100%; max-width: 460px; margin: 0 auto 1.25rem;
+padding: 1rem; background: var(--persimmon); color: var(--cream-pure);
+border: none; font-family: var(--sans);
+font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+text-transform: uppercase; cursor: pointer; transition: background .2s;
+}
+.cta-submit:hover { background: var(--persimmon-bright); }
+.cta-note { font-size: .72rem; color: rgba(185,194,205,.5); }
+
+/* ── FOOTER ── */
+footer {
+background: var(--navy);
+border-top: 1px solid rgba(185,194,205,.16);
+padding: 2.25rem 4rem;
+display: flex; justify-content: space-between; align-items: center;
+}
+.footer-logo .wm { font-size: 1.5rem; color: var(--cream-pure); }
+.footer-logo .wm .at { color: var(--persimmon-bright); }
+.footer-logo { text-decoration: none; }
+.footer-links { display: flex; gap: 2rem; list-style: none; }
+.footer-links a {
+font-size: .7rem; letter-spacing: .12em; font-weight: 600;
+text-transform: uppercase; color: var(--silver);
+text-decoration: none; transition: color .2s;
+}
+.footer-links a:hover { color: var(--persimmon-bright); }
+.footer-copy { font-size: .7rem; letter-spacing: .04em; color: rgba(185,194,205,.4); }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+nav { padding: 1.1rem 1.5rem; }
+.nav-links { display: none; }
+section { padding: 5rem 1.5rem; }
+.shift-grid, .record-grid, .what-grid, .about-grid {
+grid-template-columns: 1fr; gap: 3rem;
+}
+.shift-left, .record-left, .what-left, .about-sticky { position: static; }
+.plans-grid { grid-template-columns: 1fr; }
+.rec-row { grid-template-columns: 52px 1fr; gap: 1.25rem; padding: 1.5rem 0; }
+.rec-letter { width: 48px; height: 48px; font-size: 1.6rem; }
+footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
+.footer-links { justify-content: center; }
+}
+</style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo">LASilver Communications</a>
-  <ul class="nav-links">
-    <li><a href="#shift">The Shift</a></li>
-    <li><a href="#framework">The Framework</a></li>
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Start with an Audit</a>
+<a href="#" class="nav-brand">
+<span class="nav-chip"><span class="las">L<span class="at">@</span>S</span></span>
+<span class="nav-logo">
+<span class="wm">L<span class="at">@</span>Silver</span>
+<span class="nav-comms">Communications</span>
+</span>
+</a>
+<ul class="nav-links">
+<li><a href="#shift">The Shift</a></li>
+<li><a href="record-framework.html">The Framework</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+</ul>
+<a href="#contact" class="nav-cta">Start with an Audit</a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="container">
-    <span class="hero-eyebrow">LASilver Communications &nbsp;·&nbsp; Modern PR &amp; Communications Firm</span>
-    <h1 class="hero">Build the<br><em>Good Record.</em></h1>
-    <p class="hero-sub">LASilver Communications helps organizations become the trusted source in their category.</p>
-    <a href="#contact" class="hero-cta">Start with an Audit</a>
-  </div>
+<div class="container">
+<span class="hero-eyebrow">L@Silver Communications &nbsp;·&nbsp; Modern PR &amp; Communications Firm</span>
+<h1 class="hero">Build the Record.<br><em>Own the Narrative.</em></h1>
+<p class="hero-sub">Modern PR strategy for entrepreneurs and brands that want to build credibility, earn authority, and become the trusted source in their category.</p>
+<a href="#contact" class="hero-cta">Start with an Audit</a>
+</div>
 </section>
 
 <!-- THE SHIFT -->
 <section id="shift">
-  <div class="container">
-    <div class="shift-grid">
-      <div class="shift-left">
-        <span class="shift-tag">The Shift</span>
-        <h2 class="shift">AI didn't change what people trust.<br><em>It changed where trust gets decided.</em></h2>
-      </div>
-      <div class="shift-right">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- THE GOOD RECORD -->
-<section id="record">
-  <div class="container">
-    <span class="section-label">The Good Record™</span>
-    <div class="record-grid">
-      <div class="record-left">
-        <h2 class="record">The record others trust,<br><em>reference,</em><br>and recommend.</h2>
-      </div>
-      <div class="record-right">
-        <p class="record-lead">The Good Record is the trusted body of evidence of expertise and original thinking that compounds trust and causes people and AI to reach for your name first.</p>
-        <ul class="record-list">
-          <li>It is not content.</li>
-          <li>It is not campaigns.</li>
-          <li>It is not messaging.</li>
-        </ul>
-        <p class="record-close">It is the record others trust, reference, and recommend.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="shift-grid">
+<div class="shift-left">
+<span class="shift-tag">The Shift</span>
+<h2 class="shift">AI didn't change what people trust.<br><em>It changed where trust gets decided.</em></h2>
+</div>
+<div class="shift-right">
+</div>
+</div>
+</div>
 </section>
 
 <!-- WHAT WE DO -->
 <section id="what">
-  <div class="container">
-    <div class="what-grid">
-      <div class="what-left">
-        <span class="shift-tag">What We Do</span>
-        <h2 class="what">We build<br>the<br><em>record.</em></h2>
-      </div>
-      <div>
-        <div class="what-body">
-          <p>We are a modern PR firm. The difference is what we are building toward. Not coverage as a metric. Coverage as infrastructure for The Good Record.</p>
-          <p>Through earned media, thought leadership, original research, and strategic communications, we transform expertise into durable assets that continue creating value long after they are published.</p>
-          <strong>Not more content.<br>A stronger record.</strong>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="what-grid">
+<div class="what-left">
+<span class="shift-tag">What We Do</span>
+<h2 class="what">We build<br>the<br><em>record.</em></h2>
+</div>
+<div>
+<div class="what-body">
+<p>We are a modern PR firm. The difference is what we are building toward. Not coverage as a metric. Coverage as infrastructure for The Record.</p>
+<p>Through earned media, thought leadership, original research, and strategic communications, we transform expertise into durable assets that continue creating value long after they are published.</p>
+<strong>Not more content.<br>A stronger record.</strong>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- THE RECORD FRAMEWORK -->
-<section id="framework">
-  <div class="container">
-    <span class="section-label">The RECORD Framework</span>
-    <div class="framework-grid">
-      <div class="framework-left">
-        <h2 class="framework">Six layers.<br><em>Six behaviors.</em><br>One record.</h2>
-        <a href="record-framework.html" class="framework-cta">Explore the Framework</a>
-      </div>
-      <div>
-        <div class="record-letters">
-          <div class="record-letter">
-            <span class="ltr">R</span>
-            <span class="lbl">Releases</span>
-            <span class="act">Publish</span>
-          </div>
-          <div class="record-letter">
-            <span class="ltr">E</span>
-            <span class="lbl">Expertise</span>
-            <span class="act">Think</span>
-          </div>
-          <div class="record-letter">
-            <span class="ltr">C</span>
-            <span class="lbl">Corroboration</span>
-            <span class="act">Validate</span>
-          </div>
-          <div class="record-letter">
-            <span class="ltr">O</span>
-            <span class="lbl">Owned</span>
-            <span class="act">Own</span>
-          </div>
-          <div class="record-letter">
-            <span class="ltr">R</span>
-            <span class="lbl">References</span>
-            <span class="act">Observe</span>
-          </div>
-          <div class="record-letter">
-            <span class="ltr">D</span>
-            <span class="lbl">Documentation</span>
-            <span class="act">Structure</span>
-          </div>
-        </div>
-        <p class="framework-intro">Authority isn't built through isolated campaigns. It compounds through a growing body of work.</p>
-        <p class="framework-body">The RECORD Framework is the system behind The Good Record — six layers of behavior that, practiced together, make your name the one AI and buyers reach for first. Each layer builds on the last. Each behavior compounds the next.</p>
-        <div class="framework-tags">
-          <span class="framework-tag">Releases</span>
-          <span class="framework-tag">Expertise</span>
-          <span class="framework-tag">Corroboration</span>
-          <span class="framework-tag">Owned</span>
-          <span class="framework-tag">References</span>
-          <span class="framework-tag">Documentation</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW TRUST COMPOUNDS -->
 <section id="how">
-  <div class="container">
-    <span class="section-label">How Trust Compounds</span>
-    <h2 class="how">Find. Build. Earn.<br><em>Compound.</em></h2>
-    <div class="steps-grid">
-      <div class="step">
-        <span class="step-word">Find</span>
-        <p class="step-body">We examine how people and AI understand your category and identify where your record falls short.</p>
-      </div>
-      <div class="step">
-        <span class="step-word">Build</span>
-        <p class="step-body">We turn expertise into durable assets worth citing and remembering.</p>
-      </div>
-      <div class="step">
-        <span class="step-word">Earn</span>
-        <p class="step-body">We place those ideas where buyers, media, and AI systems discover and learn.</p>
-      </div>
-      <div class="step">
-        <span class="step-word">Compound</span>
-        <p class="step-body">Trust builds on trust. Every signal strengthens the next.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<span class="section-label">The RECORD Framework</span>
+<h2 class="how">Six layers. <em>One record.</em></h2>
+<div class="rec-list">
+
+<div class="rec-row">
+<div class="rec-letter">R</div>
+<div>
+<div class="rec-word">Releases</div>
+<p class="rec-desc">The steady stream of ideas and assets from which authority compounds.</p>
+</div>
+</div>
+
+<div class="rec-row">
+<div class="rec-letter">E</div>
+<div>
+<div class="rec-word">Expertise</div>
+<p class="rec-desc">Original thinking worth citing. AI rewards knowledge, not slogans.</p>
+</div>
+</div>
+
+<div class="rec-row">
+<div class="rec-letter">C</div>
+<div>
+<div class="rec-word">Corroboration</div>
+<p class="rec-desc">Independent proof that strengthens credibility when trusted sources reinforce the same story.</p>
+</div>
+</div>
+
+<div class="rec-row">
+<div class="rec-letter">O</div>
+<div>
+<div class="rec-word">Owned</div>
+<p class="rec-desc">The source of truth you control — the foundation AI references.</p>
+</div>
+</div>
+
+<div class="rec-row">
+<div class="rec-letter">R</div>
+<div>
+<div class="rec-word">References</div>
+<p class="rec-desc">Citations and signals that reinforce authority when others point back to your ideas.</p>
+</div>
+</div>
+
+<div class="rec-row">
+<div class="rec-letter">D</div>
+<div>
+<div class="rec-word">Documentation</div>
+<p class="rec-desc">Structured signals machines understand. Authority must be machine-readable.</p>
+</div>
+</div>
+
+</div>
+<a href="record-framework.html" class="framework-explore">Explore the Full Framework</a>
+</div>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-  <div class="container">
-    <span class="section-label">Services</span>
-    <h2 class="services">Select. Deliberate.<br><em>Built to last.</em></h2>
-    <p class="services-sub">We work with a limited number of clients at any one time. The work compounds — and that means the partnership is built to last.</p>
-    <div class="plans-grid">
-      <div class="plan">
-        <p class="plan-tag">Entry Point</p>
-        <h3 class="plan-name">The Audit</h3>
-        <p class="plan-subtitle">Before strategy, diagnosis.</p>
-        <p class="plan-period">$2,500 &nbsp;·&nbsp; One-time &nbsp;·&nbsp; 3 weeks</p>
-        <div class="plan-divider"></div>
-        <p class="plan-desc">We examine how AI and buyers understand your category, identify where your record falls short, and deliver a clear picture of what it would take to close the gap.</p>
-        <a href="#contact" class="plan-btn">Start with an Audit</a>
-      </div>
-      <div class="plan featured">
-        <p class="plan-tag">The Partnership</p>
-        <h3 class="plan-name">Build The Record</h3>
-        <p class="plan-subtitle">The work that compounds.</p>
-        <p class="plan-period">Monthly retainer &nbsp;·&nbsp; 6-month minimum</p>
-        <div class="plan-divider"></div>
-        <p class="plan-desc">This is not a campaign with an end date. It is a communications partnership built on a simple truth: the record compounds as long as you build it. Clients who build with us stay — not because they are locked in, but because the work gets stronger every month.</p>
-        <a href="#contact" class="plan-btn">Apply to Work Together</a>
-      </div>
-      <div class="plan">
-        <p class="plan-tag">Category Ownership</p>
-        <h3 class="plan-name">Category Ownership</h3>
-        <p class="plan-subtitle">Own your category entirely.</p>
-        <p class="plan-period">Custom &nbsp;·&nbsp; By application</p>
-        <div class="plan-divider"></div>
-        <p class="plan-desc">For organizations ready to own their category. Built around your specific market position, competitive landscape, and authority goals. AI names you first. Consistently.</p>
-        <a href="#contact" class="plan-btn">Request Access</a>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<span class="section-label">Services</span>
+<h2 class="services">Select. Deliberate.<br><em>Built to last.</em></h2>
+<p class="services-sub">We work with a limited number of clients at any one time. The work compounds — and that means the partnership is built to last.</p>
+<div class="plans-grid">
+<div class="plan">
+<p class="plan-tag">Entry Point</p>
+<h3 class="plan-name">The Audit</h3>
+<p class="plan-subtitle">Before strategy, diagnosis.</p>
+<p class="plan-period">$2,500 &nbsp;·&nbsp; One-time &nbsp;·&nbsp; 3 weeks</p>
+<div class="plan-divider"></div>
+<p class="plan-desc">We examine how AI and buyers understand your category, identify where your record falls short, and deliver a clear picture of what it would take to close the gap.</p>
+<a href="#contact" class="plan-btn">Start with an Audit</a>
+</div>
+<div class="plan featured">
+<p class="plan-tag">The Partnership</p>
+<h3 class="plan-name">Build The Record</h3>
+<p class="plan-subtitle">The work that compounds.</p>
+<p class="plan-period">Monthly retainer &nbsp;·&nbsp; 6-month minimum</p>
+<div class="plan-divider"></div>
+<p class="plan-desc">This is not a campaign with an end date. It is a communications partnership built on a simple truth: the record compounds as long as you build it. Clients who build with us stay — not because they are locked in, but because the work gets stronger every month.</p>
+<a href="#contact" class="plan-btn">Apply to Work Together</a>
+</div>
+<div class="plan">
+<p class="plan-tag">Category Ownership</p>
+<h3 class="plan-name">Category Ownership</h3>
+<p class="plan-subtitle">Own your category entirely.</p>
+<p class="plan-period">Custom &nbsp;·&nbsp; By application</p>
+<div class="plan-divider"></div>
+<p class="plan-desc">For organizations ready to own their category. Built around your specific market position, competitive landscape, and authority goals. AI names you first. Consistently.</p>
+<a href="#contact" class="plan-btn">Request Access</a>
+</div>
+</div>
+</div>
 </section>
 
 <!-- ORIGINAL GENERATION -->
 <section id="og">
-  <div class="container">
-    <span class="og-tag">Original Generation™</span>
-    <h2 class="og">The discipline of transforming human understanding into <em>trusted knowledge.</em></h2>
-    <p class="og-sub">Because the future belongs to those who become the source.</p>
-  </div>
+<div class="container">
+<span class="og-tag">Own the Narrative</span>
+<h2 class="og">The discipline of transforming human understanding into <em>trusted knowledge.</em></h2>
+<p class="og-sub">Because the future belongs to those who become the source.</p>
+</div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="container">
-    <span class="section-label">About</span>
-    <div class="about-grid">
-      <div class="about-sticky">
-        <img src="LeeannSilverComms.jpg"
-             alt="LeeAnn Silver, Founder of LASilver Communications" class="about-img">
-        <p class="about-caption">LeeAnn Silver<br>Founder, LASilver Communications</p>
-      </div>
-      <div>
-        <h2 class="about">Built by someone who <em>understood the shift.</em></h2>
-        <div class="about-body">
-          <p>I spent a career building brands through public relations and earned media.</p>
-          <p>Then something changed.</p>
-          <p>The same systems that influenced buyers began influencing AI. The mechanism of trust stayed the same. The scoreboard just changed.</p>
-          <p>Most companies responded by producing more content.</p>
-          <p>I believe the brands that build their record first will be difficult to displace.</p>
-          <p>The question worth asking is not "How much press coverage did we get?" The question is: <strong>"What does AI say about us when a buyer asks who to trust in our category?"</strong></p>
-          <p>If you don't know the answer, that's where the audit starts.</p>
-          <p>Authority. Documented, accumulated, verifiable authority. The kind that causes a buyer who has never heard of you to trust you before they've had a single conversation.</p>
-          <p>That's why I founded LASilver Communications.</p>
-        </div>
-        <p class="about-sig">— LeeAnn Silver, Founder</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<span class="section-label">About</span>
+<div class="about-grid">
+<div class="about-sticky">
+<img src="LeeannSilverComms.jpg"
+alt="LeeAnn Silver, Founder of LASilver Communications" class="about-img">
+<p class="about-caption">LeeAnn Silver<br>Founder, L@Silver Communications</p>
+</div>
+<div>
+<h2 class="about">Built by someone who <em>understood the shift.</em></h2>
+<div class="about-body">
+<p>I spent a career building brands through public relations and earned media.</p>
+<p>Then something changed.</p>
+<p>The same systems that influenced buyers began influencing AI. The mechanism of trust stayed the same. The scoreboard just changed.</p>
+<p>Most companies responded by producing more content.</p>
+<p>I believe the brands that build their record first will be difficult to displace.</p>
+<p>The question worth asking is not "How much press coverage did we get?" The question is: <strong>"What does AI say about us when a buyer asks who to trust in our category?"</strong></p>
+<p>If you don't know the answer, that's where the audit starts.</p>
+<p>Authority. Documented, accumulated, verifiable authority. The kind that causes a buyer who has never heard of you to trust you before they've had a single conversation.</p>
+<p>That's why I founded L@Silver Communications.</p>
+</div>
+<p class="about-sig">— LeeAnn Silver, Founder</p>
+</div>
+</div>
+</div>
 </section>
 
 <!-- CTA -->
 <section id="contact">
-  <div class="container-narrow">
-    <span class="cta-eyebrow">Start Here</span>
-    <h2 class="cta">Find out where your<br><em>record stands today.</em></h2>
-    <p class="cta-premise">Because recommendation is the new distribution.</p>
-    <form onsubmit="return false;">
-      <input class="cta-select" type="email" placeholder="Your work email">
-      <select class="cta-select">
-        <option value="" disabled selected>Interested in…</option>
-        <option>The Known Audit — I want to see where I stand</option>
-        <option>The Known Record — I am ready to start building</option>
-        <option>Known Category — I want to own my space</option>
-        <option>Not sure yet — help me figure it out</option>
-      </select>
-      <button class="cta-submit" type="submit">Start with an Audit</button>
-    </form>
-    <p class="cta-note">No spam. No pitch deck. Just a clear picture of where you stand.</p>
-  </div>
+<div class="container-narrow">
+<span class="cta-eyebrow">Start Here</span>
+<h2 class="cta">Find out where your<br><em>record stands today.</em></h2>
+<p class="cta-premise">Because recommendation is the new distribution.</p>
+<form onsubmit="return false;">
+<input class="cta-select" type="email" placeholder="Your work email">
+<select class="cta-select">
+<option value="" disabled selected>Interested in…</option>
+<option>The Known Audit — I want to see where I stand</option>
+<option>The Known Record — I am ready to start building</option>
+<option>Known Category — I want to own my space</option>
+<option>Not sure yet — help me figure it out</option>
+</select>
+<button class="cta-submit" type="submit">Start with an Audit</button>
+</form>
+<p class="cta-note">No spam. No pitch deck. Just a clear picture of where you stand.</p>
+</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <a href="#" class="footer-logo">LASilver Communications</a>
-  <ul class="footer-links">
-    <li><a href="#shift">The Shift</a></li>
-    <li><a href="record-framework.html">The Framework</a></li>
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Start Here</a></li>
-  </ul>
-  <p class="footer-copy">© 2026 LASilver Communications. All rights reserved.</p>
+<a href="#" class="footer-logo"><span class="wm">L<span class="at">@</span>Silver</span></a>
+<ul class="footer-links">
+<li><a href="#shift">The Shift</a></li>
+<li><a href="record-framework.html">The Framework</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Start Here</a></li>
+</ul>
+<p class="footer-copy">© 2026 L@Silver Communications. All rights reserved.</p>
 </footer>
 
 <script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  });
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+nav.classList.toggle('scrolled', window.scrollY > 40);
+});
 </script>
 </body>
 </html>
