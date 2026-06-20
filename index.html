@@ -14,20 +14,24 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
+/* ── Brand palette ── */
 --navy: #15233c;
 --navy-soft: #243650;
---persimmon: #d2552f;
---persimmon-bright: #e26b44;
---slate: #5d6b80;
---silver: #8d97a6;
---silver-bright: #b9c2cd;
---cream: #f3f4f6;
---cream-pure: #fafbfc;
---hair: #dadee4;
+--persimmon: #d2552f;        /* accent · the @ */
+--persimmon-bright: #e26b44; /* accent on navy */
+--slate: #5d6b80;            /* body & captions */
+--silver: #8d97a6;           /* the "Silver" · rings */
+--silver-bright: #b9c2cd;    /* on-navy text */
+--cream: #f3f4f6;            /* page ground */
+--cream-pure: #fafbfc;       /* lightest surface */
+--hair: #dadee4;             /* rules & borders */
+
+/* legacy aliases kept for existing rules */
 --gold: #d2552f;
 --white: #fafbfc;
 --mid: #5d6b80;
 --border: #dadee4;
+
 --serif: 'Cormorant Garamond', Garamond, Georgia, serif;
 --news:  'Newsreader', Georgia, 'Times New Roman', serif;
 --sans:  'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -42,6 +46,8 @@ font-size: 16px;
 line-height: 1.7;
 -webkit-font-smoothing: antialiased;
 }
+
+/* ── WORDMARK + ICON ── */
 .wm {
 font-family: var(--serif); font-weight: 500;
 letter-spacing: -.005em; white-space: nowrap; color: var(--navy);
@@ -49,6 +55,8 @@ letter-spacing: -.005em; white-space: nowrap; color: var(--navy);
 .wm .at { color: var(--persimmon); display: inline-block; transform: translateY(.02em); }
 .las { font-family: var(--serif); font-weight: 500; white-space: nowrap; line-height: 1; }
 .las .at { color: var(--persimmon); display: inline-block; transform: translateY(.02em); }
+
+/* ── NAV ── */
 nav {
 position: fixed; top: 0; left: 0; right: 0; z-index: 100;
 display: flex; align-items: center; justify-content: space-between;
@@ -93,10 +101,13 @@ background: var(--navy); text-decoration: none;
 padding: .65rem 1.5rem; transition: background .2s;
 }
 .nav-cta:hover { background: var(--persimmon); }
+
+/* ── SHARED ── */
 section { padding: 8rem 4rem; }
 .container { max-width: 1200px; margin: 0 auto; }
 .container-mid { max-width: 860px; margin: 0 auto; }
 .container-narrow{ max-width: 640px; margin: 0 auto; }
+
 .section-label {
 font-family: var(--sans);
 font-size: .7rem; font-weight: 600; letter-spacing: .2em;
@@ -104,6 +115,13 @@ text-transform: uppercase; color: var(--persimmon);
 padding-bottom: 1rem; border-bottom: 1px solid var(--hair);
 margin-bottom: 3.5rem; display: block;
 }
+.gold-tag {
+font-size: .7rem; font-weight: 600; letter-spacing: .2em;
+text-transform: uppercase; color: var(--persimmon);
+display: block; margin-bottom: 1rem;
+}
+
+/* ── HERO ── */
 #hero {
 padding-top: 12rem; padding-bottom: 9rem;
 border-bottom: 1px solid var(--hair);
@@ -134,6 +152,8 @@ background: var(--navy); text-decoration: none;
 padding: .9rem 2.25rem; transition: background .2s;
 }
 .hero-cta:hover { background: var(--persimmon); }
+
+/* ── THE RECORD ERA ── */
 #shift {
 background: var(--navy); color: var(--cream-pure);
 border-bottom: 1px solid rgba(185,194,205,.16);
@@ -168,6 +188,8 @@ font-style: italic; display: block;
 margin-top: 2rem; padding-top: 2rem;
 border-top: 1px solid rgba(185,194,205,.16);
 }
+
+/* ── THE RECORD FRAMEWORK ── */
 #how { border-bottom: 1px solid var(--hair); }
 h2.how {
 font-family: var(--serif);
@@ -176,6 +198,7 @@ font-weight: 500; line-height: 1.05; letter-spacing: -.02em;
 color: var(--navy); margin-bottom: 3.5rem;
 }
 h2.how em { font-style: italic; font-weight: 400; color: var(--persimmon); }
+
 .rec-list { border-top: 1px solid var(--hair); max-width: 880px; }
 .rec-row {
 display: grid; grid-template-columns: 72px 1fr; gap: 2rem;
@@ -235,6 +258,8 @@ background: var(--navy); text-decoration: none;
 padding: .9rem 2.25rem; transition: background .2s;
 }
 .framework-explore:hover { background: var(--persimmon); }
+
+/* ── SERVICES ── */
 #services { border-bottom: 1px solid var(--hair); }
 h2.services {
 font-family: var(--serif);
@@ -303,6 +328,8 @@ transition: all .2s; margin-top: auto;
 .plan-btn:hover { background: var(--navy); color: var(--cream-pure); }
 .plan.featured .plan-btn { border-color: var(--persimmon-bright); color: var(--persimmon-bright); }
 .plan.featured .plan-btn:hover { background: var(--persimmon-bright); color: var(--navy); }
+
+/* ── ABOUT ── */
 #about { border-bottom: 1px solid var(--hair); }
 .about-grid {
 display: grid; grid-template-columns: 260px 1fr;
@@ -338,6 +365,8 @@ border-top: 1px solid var(--hair);
 font-family: var(--news); font-style: italic; font-weight: 300;
 font-size: 1rem; color: var(--persimmon);
 }
+
+/* ── CTA ── */
 #contact {
 background: var(--navy); color: var(--cream-pure); text-align: center;
 }
@@ -375,6 +404,8 @@ text-transform: uppercase; cursor: pointer; transition: background .2s;
 }
 .cta-submit:hover { background: var(--persimmon-bright); }
 .cta-note { font-size: .72rem; color: rgba(185,194,205,.5); }
+
+/* ── FOOTER ── */
 footer {
 background: var(--navy);
 border-top: 1px solid rgba(185,194,205,.16);
@@ -392,11 +423,15 @@ text-decoration: none; transition: color .2s;
 }
 .footer-links a:hover { color: var(--persimmon-bright); }
 .footer-copy { font-size: .7rem; letter-spacing: .04em; color: rgba(185,194,205,.4); }
+
+/* ── MOBILE ── */
 @media (max-width: 900px) {
 nav { padding: 1.1rem 1.5rem; }
 .nav-links { display: none; }
 section { padding: 5rem 1.5rem; }
-.shift-grid, .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+.shift-grid, .about-grid {
+grid-template-columns: 1fr; gap: 3rem;
+}
 .shift-left, .about-photo-wrap { position: static; }
 .plans-grid { grid-template-columns: 1fr; }
 .rec-row { grid-template-columns: 52px 1fr; gap: 1.25rem; padding: 1.5rem 0; }
@@ -410,6 +445,7 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="nav">
 <a href="#" class="nav-brand">
 <span class="nav-chip"><span class="las">L<span class="at">@</span>S</span></span>
@@ -427,15 +463,17 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 <a href="#contact" class="nav-cta">Start with an Audit</a>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
 <div class="container">
-<span class="hero-eyebrow">L@Silver Communications &nbsp;·&nbsp; Modern PR &amp; Communications Firm</span>
+<span class="hero-eyebrow">L@Silver Communications</span>
 <h1 class="hero">Build the Record.<br><em>Own the Narrative.</em></h1>
-<p class="hero-sub">Modern PR strategy for entrepreneurs and brands that want to build credibility, earn authority, and become the trusted source in their category.</p>
+<p class="hero-sub">Communications strategy for executives who want to become the trusted source in their category.</p>
 <a href="#contact" class="hero-cta">Start with an Audit</a>
 </div>
 </section>
 
+<!-- THE RECORD ERA -->
 <section id="shift">
 <div class="container">
 <div class="shift-grid">
@@ -445,8 +483,9 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 </div>
 <div class="shift-right">
 <div class="shift-body">
-<p>We are a modern PR firm. The difference is what we are building toward. Not coverage as a metric. Coverage as infrastructure for The Record.</p>
-<p>Through earned media, thought leadership, original research, and strategic communications, we transform expertise into durable assets that continue creating value long after they are published.</p>
+<p>The scoreboard changed. Coverage is no longer the finish line. It's the foundation.</p>
+<p>Through thought leadership, earned media, original research, and strategic communications, we transform expertise into durable assets that continue creating value long after they are published.</p>
+<p>Authority compounds. The organizations that build it deliberately become the ones AI and buyers reach for first. Not because they published more. Because they built something worth referencing.</p>
 <strong>Not more content.<br>A stronger record.</strong>
 </div>
 </div>
@@ -454,11 +493,13 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 </div>
 </section>
 
+<!-- THE RECORD FRAMEWORK -->
 <section id="how">
 <div class="container">
 <span class="section-label">The RECORD Framework</span>
 <h2 class="how">Six layers. Six behaviors. <em>One record.</em></h2>
 <div class="rec-list">
+
 <div class="rec-row">
 <div class="rec-letter">R</div>
 <div>
@@ -466,6 +507,7 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 <p class="rec-desc">The steady stream of ideas and assets from which authority compounds.</p>
 </div>
 </div>
+
 <div class="rec-row">
 <div class="rec-letter">E</div>
 <div>
@@ -473,27 +515,31 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 <p class="rec-desc">Original thinking worth citing. AI rewards knowledge, not slogans.</p>
 </div>
 </div>
+
 <div class="rec-row">
 <div class="rec-letter">C</div>
 <div>
 <div class="rec-word">Corroboration <span class="rec-verb">Validate</span></div>
-<p class="rec-desc">Independent proof that strengthens credibility when trusted sources reinforce the same story.</p>
+<p class="rec-desc">Independent proof. When trusted sources reinforce the same story, credibility compounds.</p>
 </div>
 </div>
+
 <div class="rec-row">
 <div class="rec-letter">O</div>
 <div>
 <div class="rec-word">Owned <span class="rec-verb">Own</span></div>
-<p class="rec-desc">The source of truth you control — the foundation AI references.</p>
+<p class="rec-desc">The source of truth you control. The foundation AI references.</p>
 </div>
 </div>
+
 <div class="rec-row">
 <div class="rec-letter">R</div>
 <div>
 <div class="rec-word">References <span class="rec-verb">Observe</span></div>
-<p class="rec-desc">Citations and signals that reinforce authority when others point back to your ideas.</p>
+<p class="rec-desc">Citations and signals that grow authority when others reference your thinking.</p>
 </div>
 </div>
+
 <div class="rec-row">
 <div class="rec-letter">D</div>
 <div>
@@ -501,9 +547,10 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 <p class="rec-desc">Structured signals machines understand. Authority must be machine-readable.</p>
 </div>
 </div>
+
 </div>
 <div class="how-intro">
-<p class="how-intro-text">Authority isn't built through isolated campaigns. It compounds. A growing body of work — built in layers, practiced as behaviors — is the only thing that causes AI and buyers to reach for your name first. The RECORD Framework gives that body of work a structure.</p>
+<p class="how-intro-text">Authority isn't built through isolated campaigns. It compounds. A growing body of work, built in layers and practiced as behaviors, is what causes AI and buyers to reach for your name first. The RECORD Framework gives that body of work a structure.</p>
 <div class="rec-stats">
 <div class="rec-stat"><span class="rec-stat-num">6</span><span class="rec-stat-label">Layers</span></div>
 <div class="rec-stat"><span class="rec-stat-num">6</span><span class="rec-stat-label">Behaviors</span></div>
@@ -514,6 +561,7 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 </div>
 </section>
 
+<!-- WORK WITH ME -->
 <section id="services">
 <div class="container">
 <span class="section-label">Work with Me</span>
@@ -526,7 +574,7 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 <p class="plan-subtitle">Before strategy, diagnosis.</p>
 <p class="plan-period">$2,500 &nbsp;·&nbsp; One-time &nbsp;·&nbsp; 3 weeks</p>
 <div class="plan-divider"></div>
-<p class="plan-desc">We examine how AI and buyers understand your category, identify where your record falls short, and deliver a clear picture of what it would take to close the gap.</p>
+<p class="plan-desc">I examine how AI and buyers understand your category, identify where your record falls short, and deliver a clear picture of what it would take to close the gap.</p>
 <a href="#contact" class="plan-btn">Start with an Audit</a>
 </div>
 <div class="plan featured">
@@ -535,7 +583,7 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 <p class="plan-subtitle">The work that compounds.</p>
 <p class="plan-period">Monthly retainer &nbsp;·&nbsp; 6-month minimum</p>
 <div class="plan-divider"></div>
-<p class="plan-desc">This is not a campaign with an end date. It is a communications partnership built on a simple truth: the record compounds as long as you build it. Clients who build with us stay — not because they are locked in, but because the work gets stronger every month.</p>
+<p class="plan-desc">This is not a campaign with an end date. It is a communications partnership built on a simple truth: the record compounds as long as you build it. Clients stay because the work gets stronger every month.</p>
 <a href="#contact" class="plan-btn">Apply to Work Together</a>
 </div>
 <div class="plan">
@@ -544,32 +592,33 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 <p class="plan-subtitle">Own your category entirely.</p>
 <p class="plan-period">Custom &nbsp;·&nbsp; By application</p>
 <div class="plan-divider"></div>
-<p class="plan-desc">For organizations ready to own their category. Built around your specific market position, competitive landscape, and authority goals. AI names you first. Consistently.</p>
+<p class="plan-desc">AI names you first. Consistently. Built around your specific market position, competitive landscape, and authority goals. For organizations ready to own their category entirely.</p>
 <a href="#contact" class="plan-btn">Request Access</a>
 </div>
 </div>
 </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
 <div class="container">
 <span class="section-label">About</span>
 <div class="about-grid">
 <div class="about-photo-wrap">
-<img src="assets/Headshot.jpb.jpg" alt="LeeAnn Silver, Founder of LASilver Communications" class="about-img">
+<img src="assets/Headshot.jpb.jpg"
+alt="LeeAnn Silver, Founder of LASilver Communications" class="about-img">
 <p class="about-caption">LeeAnn Silver<br>Founder, L@Silver Communications</p>
 </div>
 <div>
 <h2 class="about">Built by someone who <em>understood the shift.</em></h2>
 <div class="about-body">
-<p>I spent a career building brands through public relations and earned media.</p>
+<p>I've spent my career helping organizations become the trusted source in their category through earned media, thought leadership, and strategic communications.</p>
 <p>Then something changed.</p>
-<p>The same systems that influenced buyers began influencing AI. The mechanism of trust stayed the same. The scoreboard just changed.</p>
-<p>Most companies responded by producing more content.</p>
-<p>I believe the brands that build their record first will be difficult to displace.</p>
-<p>The question worth asking is not "How much press coverage did we get?" The question is: <strong>"What does AI say about us when a buyer asks who to trust in our category?"</strong></p>
+<p>The scoreboard changed. The same systems that influenced buyers started influencing AI.</p>
+<p>Most companies responded by producing more content. I went in the other direction.</p>
+<p>I believe the organizations that build their record first will be difficult to displace.</p>
+<p>The question worth asking isn't "How much press coverage did we get?" It's: <strong>"What does AI say about us when a buyer asks who to trust in our category?"</strong></p>
 <p>If you don't know the answer, that's where the audit starts.</p>
-<p>Authority. Documented, accumulated, verifiable authority. The kind that causes a buyer who has never heard of you to trust you before they've had a single conversation.</p>
 <p>That's why I founded L@Silver Communications.</p>
 </div>
 <p class="about-sig">— LeeAnn Silver, Founder</p>
@@ -578,6 +627,7 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 </div>
 </section>
 
+<!-- CTA -->
 <section id="contact">
 <div class="container-narrow">
 <span class="cta-eyebrow">Start Here</span>
@@ -588,7 +638,7 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 <select class="cta-select">
 <option value="" disabled selected>Interested in…</option>
 <option>The Audit — I want to see where I stand</option>
-<option>Build the Record — I am ready to start building</option>
+<option>Build the Record — I'm ready to start building</option>
 <option>Category Ownership — I want to own my space</option>
 <option>Not sure yet — help me figure it out</option>
 </select>
@@ -598,6 +648,7 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
 <a href="#" class="footer-logo"><span class="wm">L<span class="at">@</span>Silver Communications</span></a>
 <ul class="footer-links">
