@@ -76,7 +76,8 @@
 <link rel="apple-touch-icon" sizes="256x256" href="assets/favicon-256.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet"></noscript>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -333,7 +334,7 @@ footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 
 <span class="section-label">About</span>
 <div class="about-grid">
 <div class="about-photo-wrap">
-<img src="assets/Headshot.jpg" alt="Leeann Silver, Founder of LASilver Communications" class="about-img">
+<img src="assets/Headshot-display.jpg" width="720" height="428" alt="Leeann Silver, Founder of LASilver Communications" class="about-img" loading="lazy" decoding="async">
 <p class="about-caption">Leeann Silver<br>Founder, L@Silver Communications</p>
 </div>
 <div>
