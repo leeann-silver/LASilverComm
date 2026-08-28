@@ -26,10 +26,16 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
       "@id": "https://lasilvercommunications.com/#organization",
       "name": "L@Silver Communications",
-      "alternateName": "LASilver Communications",
+      "alternateName": [
+        "LASilver Communications",
+        "LA Silver Communications"
+      ],
       "url": "https://lasilvercommunications.com/",
       "logo": {
         "@type": "ImageObject",
@@ -40,11 +46,112 @@
       "image": "https://lasilvercommunications.com/assets/Headshot-display.jpg",
       "description": "L@Silver Communications is a strategic communications firm that helps organizations become the trusted source in their category, building the record of published work, expertise, and third-party corroboration that AI platforms, search engines, and buyers use to determine trust.",
       "founder": {
-        "@type": "Person",
-        "name": "Leeann Silver",
-        "jobTitle": "Founder",
-        "url": "https://lasilvercommunications.com/#about"
+        "@id": "https://lasilvercommunications.com/#leeann-silver"
       },
+      "sameAs": [],
+      "slogan": "Build the Record. Become the Source.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Diego",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "San Diego"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "knowsAbout": [
+        "Public relations",
+        "AI visibility",
+        "Generative engine optimization",
+        "Earned media strategy",
+        "Brand authority measurement",
+        "The RECORD Framework"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Three ways to work together",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "price": "1200",
+            "priceCurrency": "USD",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "The Audit",
+              "serviceType": "AI visibility and authority audit",
+              "description": "A one-time diagnostic, delivered in three days, measured against the AMEC GEO Principles and the IAB AI-visibility standard. Examines how AI and buyers understand your category and identifies the gaps in your record.",
+              "provider": {
+                "@id": "https://lasilvercommunications.com/#organization"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "United States"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Build The Record",
+              "serviceType": "Ongoing authority-building retainer",
+              "description": "Monthly retainer with a six-month minimum. An ongoing partnership in which authority compounds over time, rather than a campaign with an end date.",
+              "provider": {
+                "@id": "https://lasilvercommunications.com/#organization"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "United States"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Category Ownership",
+              "serviceType": "Category authority program",
+              "description": "Custom scope, by application. Comprehensive positioning for organizations committed to owning their category through sustained record-building.",
+              "provider": {
+                "@id": "https://lasilvercommunications.com/#organization"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "United States"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://lasilvercommunications.com/#leeann-silver",
+      "name": "Leeann Silver",
+      "givenName": "Leeann",
+      "familyName": "Silver",
+      "jobTitle": "Founder",
+      "url": "https://lasilvercommunications.com/#about",
+      "image": "https://lasilvercommunications.com/assets/Headshot-display.jpg",
+      "worksFor": {
+        "@id": "https://lasilvercommunications.com/#organization"
+      },
+      "knowsAbout": [
+        "Public relations",
+        "AI visibility",
+        "The RECORD Framework",
+        "Consumer, beauty and CPG brand communications"
+      ],
       "sameAs": []
     },
     {
@@ -52,7 +159,9 @@
       "@id": "https://lasilvercommunications.com/#website",
       "url": "https://lasilvercommunications.com/",
       "name": "L@Silver Communications",
-      "publisher": { "@id": "https://lasilvercommunications.com/#organization" },
+      "publisher": {
+        "@id": "https://lasilvercommunications.com/#organization"
+      },
       "inLanguage": "en-US"
     },
     {
@@ -61,9 +170,15 @@
       "url": "https://lasilvercommunications.com/",
       "name": "L@Silver Communications: Build the Record. Become the Source.",
       "description": "When buyers ask AI who to trust in your category, your record is what they find. LASilver Communications builds it.",
-      "isPartOf": { "@id": "https://lasilvercommunications.com/#website" },
-      "about": { "@id": "https://lasilvercommunications.com/#organization" },
-      "mainEntity": { "@id": "https://lasilvercommunications.com/#organization" },
+      "isPartOf": {
+        "@id": "https://lasilvercommunications.com/#website"
+      },
+      "about": {
+        "@id": "https://lasilvercommunications.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://lasilvercommunications.com/#organization"
+      },
       "primaryImageOfPage": "https://lasilvercommunications.com/assets/Headshot-display.jpg",
       "inLanguage": "en-US"
     }
