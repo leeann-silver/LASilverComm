@@ -1,0 +1,39 @@
+name: Build sitemap
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - '.github/workflows/sitemap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sitemap
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so lastmod can come from git, not "today"
+
+      - name: Generate sitemap.xml
+        run: python3 .github/scripts/build_sitemap.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- sitemap.xml; then
+            echo "sitemap.xml unchanged - nothing to commit"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "Rebuild sitemap.xml [skip ci]"
+          git push
