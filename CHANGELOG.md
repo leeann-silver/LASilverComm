@@ -5,6 +5,7 @@ A running record of changes to lasilvercommunications.com: what changed, where a
 ## 2026-10-07: Framework page wording (record-framework.html)
 
 - Intro sentence: removed "only" from "is the only thing that causes AI and buyers to reach for your name first."
+- Removed the visible "Version 1.2 · Updated October 7, 2026" line. The update date stays in the structured data (dateModified).
 
 ## 2026-10-07: Homepage positioning update (index.html; company description on all pages)
 
