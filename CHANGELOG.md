@@ -2,6 +2,11 @@
 
 A running record of changes to lasilvercommunications.com: what changed, where and why. Newest first.
 
+## 2026-10-07: Audit and Build card copy (index.html)
+
+- RECORD Audit card closing line changed from "Not a visibility score. A diagnosis." to "A scorecard, the diagnosis behind it and a map of what to build first." The scorecard is the differentiator, so the card now names it instead of distancing from scores.
+- Build the Record card now says the work is re-measured every quarter, so clients see what moved. Same note added to the service's structured data.
+
 ## 2026-10-07: Service tier names (index.html, faq.html, record-framework.html)
 
 **Why:** Settled the three tiers as RECORD Audit, Build the Record and Category Ownership, so the site matches internal documents and the audit is named for the framework rather than for "authority."
