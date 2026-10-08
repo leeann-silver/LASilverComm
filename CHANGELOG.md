@@ -2,6 +2,18 @@
 
 A running record of changes to lasilvercommunications.com: what changed, where and why. Newest first.
 
+## 2026-10-08: FAQ page update (faq.html)
+
+**Why:** Two answers contradicted the October 7 homepage ("Is RECORD a measurement methodology?" said no; "Is RECORD a GEO framework?" said yes). Approved in the "FAQ Audit and Copy Draft" doc.
+
+- Cut "How is RECORD different from visibility engineering?" (repeated the first question).
+- Renamed "Is RECORD a measurement methodology?" to "Is RECORD a build method or a measurement method?" Answer is now "Both," framework plus scorecard.
+- "Is RECORD a GEO framework?" now answers no: GEO is a result, the record produces it. Removed the unsourced "earned media is what AI cites most."
+- Rewrote: GEO and AI visibility services, PESO (credits Gini Dietrich), SEO, measuring whether RECORD works (scorecard method), one score (RECORD Score as summary, not verdict), monitoring tools (names Spyglasses, adds drift; removed unsourced "20+ tools"), AMEC/IAB certification (removed "built before either standard existed").
+- Added three questions: What is AI drift? Who is RECORD for? What does a client need to provide?
+- Renamed the "Measurements" nav link and section heading to "Measurement" (anchor #measurements unchanged).
+- FAQPage structured data rewritten to match the visible answers exactly (12 questions).
+
 ## 2026-10-07: Framework page wording (record-framework.html)
 
 - Intro sentence: removed "only" from "is the only thing that causes AI and buyers to reach for your name first."
