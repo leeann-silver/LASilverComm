@@ -2,6 +2,10 @@
 
 A running record of changes to lasilvercommunications.com: what changed, where and why. Newest first.
 
+## 2026-10-07: Framework page wording (record-framework.html)
+
+- Intro sentence: removed "only" from "is the only thing that causes AI and buyers to reach for your name first."
+
 ## 2026-10-07: Homepage positioning update (index.html; company description on all pages)
 
 **Why:** Lead with LASilver as a modern PR firm that builds the public record, name the measurement method, and make the homepage's six layer lines match the framework page. Approved in the "Homepage Copy Draft, Week 1" doc.
