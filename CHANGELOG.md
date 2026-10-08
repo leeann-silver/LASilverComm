@@ -2,6 +2,21 @@
 
 A running record of changes to lasilvercommunications.com: what changed, where and why. Newest first.
 
+## 2026-10-07: Homepage positioning update (index.html; company description on all pages)
+
+**Why:** Lead with LASilver as a modern PR firm that builds the public record, name the measurement method, and make the homepage's six layer lines match the framework page. Approved in the "Homepage Copy Draft, Week 1" doc.
+
+**What changed:**
+
+- Hero: new subline ("AI is changing where reputation gets formed. Your public record is what it finds."), new one-sentence company description, and the three-line explainer: "AI visibility is how I find the gaps. PR is how I build the record. RECORD is the framework that connects the two."
+- Short Version: new "What it is," "What gets measured" and "Where it starts" lines. "Who it's for" unchanged pending a decision.
+- The Record section: rewritten around the changed PR scoreboard and earned media as evidence. Removed the duplicate "Not more content. A stronger record." (it stays in the hero).
+- Framework section: six layer lines now match record-framework.html. Closing text uses the one-sentence RECORD definition and "The scorecard tells you where you stand. RECORD tells you what to build next."
+- New section, The Measurement: how the RECORD Scorecard works, built on the AMEC Integrated Evaluation Framework and the Barcelona Principles 3.0.
+- New Client Zero block under the client testimonial, linking to The Record on Substack. No baseline numbers on the homepage, by choice.
+- Homepage FAQ: "What does LASilver Communications do?" rewritten (now includes clients). "How do you measure authority?" became "How do you measure the record?" with a scorecard-based answer. Structured data updated to match.
+- Company description in structured data (all three pages), plus the search and social preview descriptions on the homepage, updated to the new positioning.
+
 ## 2026-10-07: Audit and Build card copy (index.html)
 
 - RECORD Audit card closing line changed from "Not a visibility score. A diagnosis." to "A scorecard, the diagnosis behind it and a map of what to build first." The scorecard is the differentiator, so the card now names it instead of distancing from scores.
