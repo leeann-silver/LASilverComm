@@ -2,6 +2,11 @@
 
 A running record of changes to lasilvercommunications.com: what changed, where and why. Newest first.
 
+## 2026-10-08: FAQ page intro and summary (faq.html)
+
+- Intro line now reads "What RECORD is, how it compares to GEO, PESO and SEO, and how I measure whether the record is working."
+- Page summary (search description, Facebook/LinkedIn and X previews, structured data) dropped the retired "how authority actually gets built in the AI era" for "how the public record gets built and measured."
+
 ## 2026-10-08: FAQ page update (faq.html)
 
 **Why:** Two answers contradicted the October 7 homepage ("Is RECORD a measurement methodology?" said no; "Is RECORD a GEO framework?" said yes). Approved in the "FAQ Audit and Copy Draft" doc.
