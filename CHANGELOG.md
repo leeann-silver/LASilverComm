@@ -2,6 +2,13 @@
 
 A running record of changes to lasilvercommunications.com: what changed, where and why. Newest first.
 
+## 2026-10-10: Logo letters drawn by CSS (index.html, faq.html, record-framework.html)
+
+**Why:** The logos were typed text, so tools that read page text still picked up "L@Silver Communications" as the name. L@Silver is the logo only.
+
+- The logo letters ("L@S", "L@Silver", "L@Silver Communications") are now drawn by the stylesheet instead of typed into the page. Page text no longer contains "L@Silver"; the link name is "LASilver Communications, home."
+- Checked with before-and-after screenshots of all four logos: pixel-identical.
+
 ## 2026-10-10: Logo links carry the text company name (index.html, faq.html, record-framework.html)
 
 **Why:** Name rule set 10 October 2026. LASilver Communications is the company name in all written text, and L@Silver is the logo only. The logos are built from text, so screen readers and machines were reading "L@Silver" as the name.
