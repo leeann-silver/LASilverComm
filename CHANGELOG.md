@@ -2,6 +2,14 @@
 
 A running record of changes to lasilvercommunications.com: what changed, where and why. Newest first.
 
+## 2026-10-10: Logo links carry the text company name (index.html, faq.html, record-framework.html)
+
+**Why:** Name rule set 10 October 2026. LASilver Communications is the company name in all written text, and L@Silver is the logo only. The logos are built from text, so screen readers and machines were reading "L@Silver" as the name.
+
+- Every header and footer logo link now has the accessible name "LASilver Communications, home." The logo looks exactly the same.
+- On the homepage, the header's visual logo pieces are hidden from screen readers so the label is read once, not alongside "L@S L@Silver Communications."
+- Unchanged on purpose: the structured data still lists "L@Silver Communications" and "LeeAnn Silver" as alternate names. That tells search engines and AI that those spellings are the same entity, which helps rather than hurts.
+
 ## 2026-10-08: FAQ page intro and summary (faq.html)
 
 - Intro line now reads "What RECORD is, how it compares to GEO, PESO and SEO, and how I measure whether the record is working."
