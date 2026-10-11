@@ -2,6 +2,16 @@
 
 A running record of changes to lasilvercommunications.com: what changed, where and why. Newest first.
 
+## 2026-10-11: Homepage copy matches the new positioning (index.html, faq.html)
+
+**Why:** Positioning set 11 October 2026. LASilver Communications serves founders, executives and nonprofit leaders at B2B companies, professional services firms and nonprofits, and is no longer described through "AI visibility."
+
+- Hero: the intro is now Leeann's own description (earned media, bylined articles, original research; reporters, buyers, funders or AI tools). "AI visibility is how I find the gaps..." is replaced with "First I find where your record is thin. Then I build what's missing." The same line was replaced in the FAQ answer and its structured data.
+- Short version: "What it is" and "Who it's for" rewritten for the new target.
+- Page title (browser tab, social cards): "PR That Builds the Public Record | LASilver Communications."
+- Structured data descriptions updated to the new intro, keeping "San Diego."
+- Checked with desktop and phone screenshots.
+
 ## 2026-10-10: Logo letters drawn by CSS (index.html, faq.html, record-framework.html)
 
 **Why:** The logos were typed text, so tools that read page text still picked up "L@Silver Communications" as the name. L@Silver is the logo only.
