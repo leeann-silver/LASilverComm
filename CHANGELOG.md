@@ -2,6 +2,15 @@
 
 A running record of changes to lasilvercommunications.com: what changed, where and why. Newest first.
 
+## 2026-11-17: Trademark symbols on RECORD Framework and RECORD Scorecard (index.html, record-framework.html, faq.html)
+
+**Why:** Claim RECORD Framework and RECORD Scorecard as LASilver Communications marks while the USPTO filing is prepared. The ™ symbol needs no registration; ® waits until a registration is granted.
+
+- ™ added to the first visible mention of each name on each page: homepage "The method" line and the measurement lead; framework page hero line; FAQ "build method or measurement method" answer.
+- Footer on all three pages now reads "RECORD Framework™ and RECORD Scorecard™ are trademarks of LASilver Communications."
+- Unchanged on purpose: page titles, meta descriptions and structured data keep the plain names, so search engines and AI read the names without the symbol.
+- Checked with screenshots of each changed spot.
+
 ## 2026-10-11: Homepage copy matches the new positioning (index.html, faq.html)
 
 **Why:** Positioning set 11 October 2026. LASilver Communications serves founders, executives and nonprofit leaders at B2B companies, professional services firms and nonprofits, and is no longer described through "AI visibility."
